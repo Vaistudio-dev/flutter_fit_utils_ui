@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_fit_utils_ui/theme/fit_theme.dart';
 
 /// Texte style FitLog.
 class FitText extends StatelessWidget {
@@ -117,13 +117,16 @@ class FitText extends StatelessWidget {
 
   TextStyle? _getStyle(BuildContext context) {
     final ThemeData appTheme = Theme.of(context);
+    final FitTheme? fitTheme = FitTheme.of(context);
+
+    getStyle(style) => fitTheme?.baseTextStyle?.merge(style) ?? style;
 
     switch (_role) {
-      case "headline": return GoogleFonts.roboto(textStyle: appTheme.textTheme.headlineMedium?.merge(style));
-      case "title": return GoogleFonts.roboto(textStyle: appTheme.textTheme.titleMedium?.merge(style));
-      case "body": return GoogleFonts.roboto(textStyle: appTheme.textTheme.bodyMedium?.merge(style));
-      case "button": return GoogleFonts.roboto(textStyle: appTheme.textTheme.labelMedium?.merge(style));
-      case "tip": return GoogleFonts.roboto(textStyle: appTheme.textTheme.labelSmall?.merge(style));
+      case "headline": return getStyle(appTheme.textTheme.headlineMedium?.merge(style));
+      case "title": return getStyle(appTheme.textTheme.titleMedium?.merge(style));
+      case "body": return getStyle(appTheme.textTheme.bodyMedium?.merge(style));
+      case "button": return getStyle(appTheme.textTheme.labelMedium?.merge(style));
+      case "tip": return getStyle(appTheme.textTheme.labelSmall?.merge(style));
       default: return style;
     }
   }
