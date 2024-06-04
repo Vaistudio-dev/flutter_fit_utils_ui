@@ -29,7 +29,8 @@ class MyApp extends StatelessWidget {
             child: const Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                FitText.title("FitText widget:", margin: EdgeInsets.only(bottom: 12)),
+                FitText.title("FitText widget:",
+                    margin: EdgeInsets.only(bottom: 12)),
                 FitText.headline("Headline"),
                 FitText.title("Title"),
                 FitText.body("Body", style: TextStyle(color: Colors.purple)),

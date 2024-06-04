@@ -1,38 +1,65 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_fit_utils_ui/theme/fit_theme.dart';
 
-/// Texte style FitLog.
+/// [Text] widget with pre-built styles:
+/// Headline: based on TextTheme.headlineLarge.
+/// Title: based on TextTheme.titleLarge.
+/// Body: based on TextTheme.bodyLarge.
+/// Button: based on TextTheme.labelLarge.
+/// Tip: based on TextTheme.labelSmall.
+/// 
+/// The text style is also based on FitTheme.baseTextStyle.
+/// Here is the order for merging the 3 styles together:
+/// 1. Role style (headline, title, etc.)
+/// 2. Base style (from FitTheme)
+/// 3. Custom stlye ([FitText.style])
+/// 
+/// [FiText] may also automatically wrap the [Text] widget inside a [Container],
+/// if necessary. To be wrapped in a [Container], at least one of the following
+/// properties needs to be non null:
+/// - [FitText.alignment]
+/// - [FitText.margin]
+/// - [FitText.padding]
+/// - [FitText.width]
+/// - [FitText.height]
 class FitText extends StatelessWidget {
   final String _role;
 
-  /// Texte à afficher.
+  /// Text to display.
   final String text;
-  /// Style du texte
+
+  /// Custom styling to apply.
+  /// This style will override the role style (Headline, Title, Body, Button, Tip)
+  /// and [FitTheme.baseTextStyle].
   final TextStyle? style;
-  /// Alignement du texte.
+
+  /// [Text.textAlign].
   final TextAlign? textAlign;
 
-  /// Style d'overflow du texte.
+  /// [Text.overflow]
   final TextOverflow? overflow;
 
-  /// Margin du texte.
+  /// Margin for the text.
   final EdgeInsets? margin;
-  /// Padding du texte.
+
+  /// Padding for the text.
   final EdgeInsets? padding;
 
-  /// Largeur du texte.
+  /// Width of the text.
   final double? width;
-  /// Hauteur du texte.
+
+  /// Height of the text.
   final double? height;
 
-  /// Alignement du conteneur du texte.
+  /// Alignment of the container wrapping the text.
   final Alignment? alignment;
 
-  /// Nombre de lignes maximum.
+  /// [Text.maxLines].
   final int? maxLines;
 
-  /// Texte style FitLog.
-  const FitText(this.text, {
+  /// Creates a basic text with no role styling.
+  const FitText(
+    this.text, {
     super.key,
     this.style,
     this.margin,
@@ -45,8 +72,9 @@ class FitText extends StatelessWidget {
     this.overflow,
   }) : _role = "";
 
-  /// Créer un texte avec le style d'un titre.
-  const FitText.headline(this.text, {
+  /// Creates a headline text with the headline role.
+  const FitText.headline(
+    this.text, {
     super.key,
     this.style,
     this.margin,
@@ -59,8 +87,9 @@ class FitText extends StatelessWidget {
     this.overflow,
   }) : _role = "headline";
 
-  /// Créer un texte avec le style d'un sous-titre.
-  const FitText.title(this.text, {
+  /// Creates a title text with the title role.
+  const FitText.title(
+    this.text, {
     super.key,
     this.style,
     this.margin,
@@ -73,8 +102,9 @@ class FitText extends StatelessWidget {
     this.overflow,
   }) : _role = "title";
 
-  /// Créer un texte avec le style d'un corps de texte.
-  const FitText.body(this.text, {
+  /// Creates a body text with the body role.
+  const FitText.body(
+    this.text, {
     super.key,
     this.style,
     this.margin,
@@ -87,8 +117,9 @@ class FitText extends StatelessWidget {
     this.overflow,
   }) : _role = "body";
 
-  /// Créer un texte avec le style d'un bouton.
-  const FitText.button(this.text, {
+  /// Creates a button text with the button role.
+  const FitText.button(
+    this.text, {
     super.key,
     this.style,
     this.margin,
@@ -101,8 +132,9 @@ class FitText extends StatelessWidget {
     this.overflow,
   }) : _role = "button";
 
-  /// Créer un texte avec le style d'un astuce.
-  const FitText.tip(this.text, {
+  /// Creates a tip text with the tip role.
+  const FitText.tip(
+    this.text, {
     super.key,
     this.style,
     this.margin,
@@ -119,15 +151,23 @@ class FitText extends StatelessWidget {
     final ThemeData appTheme = Theme.of(context);
     final FitTheme? fitTheme = FitTheme.of(context);
 
-    getStyle(mainStyle) => mainStyle?.merge(fitTheme?.baseTextStyle?.merge(style)) ?? (fitTheme?.baseTextStyle?.merge(style) ?? style);
+    applyStylingOrder(mainStyle) =>
+        mainStyle?.merge(fitTheme?.baseTextStyle?.merge(style) ?? style) ??
+        (fitTheme?.baseTextStyle?.merge(style) ?? style);
 
     switch (_role) {
-      case "headline": return getStyle(appTheme.textTheme.headlineLarge);
-      case "title": return getStyle(appTheme.textTheme.titleLarge);
-      case "body": return getStyle(appTheme.textTheme.bodyLarge);
-      case "button": return getStyle(appTheme.textTheme.labelLarge);
-      case "tip": return getStyle(appTheme.textTheme.labelSmall);
-      default: return getStyle(null);
+      case "headline":
+        return applyStylingOrder(appTheme.textTheme.headlineLarge);
+      case "title":
+        return applyStylingOrder(appTheme.textTheme.titleLarge);
+      case "body":
+        return applyStylingOrder(appTheme.textTheme.bodyLarge);
+      case "button":
+        return applyStylingOrder(appTheme.textTheme.labelLarge);
+      case "tip":
+        return applyStylingOrder(appTheme.textTheme.labelSmall);
+      default:
+        return applyStylingOrder(null);
     }
   }
 
@@ -141,15 +181,16 @@ class FitText extends StatelessWidget {
       overflow: overflow,
     );
 
-    return [alignment, margin, padding, width, height].any((element) => element != null) ?
-      Container(
-        alignment: alignment,
-        margin: margin,
-        padding: padding,
-        width: width,
-        height: height,
-        child: textWidget,
-      ) :
-      textWidget;
+    return [alignment, margin, padding, width, height]
+            .any((element) => element != null)
+        ? Container(
+            alignment: alignment,
+            margin: margin,
+            padding: padding,
+            width: width,
+            height: height,
+            child: textWidget,
+          )
+        : textWidget;
   }
 }

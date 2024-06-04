@@ -9,12 +9,12 @@ class FitTheme extends InheritedWidget {
 
   /// Creates a new intance of [FitTheme].
   const FitTheme({super.key, required super.child, this.baseTextStyle});
- 
+
   /// Gets the closest [FitTheme] in the Widget Tree.
   static FitTheme? of(BuildContext context) {
     return context.dependOnInheritedWidgetOfExactType<FitTheme>();
   }
- 
+
   @override
   bool updateShouldNotify(FitTheme oldWidget) {
     return oldWidget.baseTextStyle != baseTextStyle;
