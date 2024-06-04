@@ -119,7 +119,7 @@ class FitText extends StatelessWidget {
     final ThemeData appTheme = Theme.of(context);
     final FitTheme? fitTheme = FitTheme.of(context);
 
-    getStyle(mainStyle) => mainStyle.merge(fitTheme?.baseTextStyle?.merge(style));
+    getStyle(mainStyle) => mainStyle?.merge(fitTheme?.baseTextStyle?.merge(style)) ?? (fitTheme?.baseTextStyle?.merge(style) ?? style);
 
     switch (_role) {
       case "headline": return getStyle(appTheme.textTheme.headlineLarge);
@@ -127,7 +127,7 @@ class FitText extends StatelessWidget {
       case "body": return getStyle(appTheme.textTheme.bodyLarge);
       case "button": return getStyle(appTheme.textTheme.labelLarge);
       case "tip": return getStyle(appTheme.textTheme.labelSmall);
-      default: return style;
+      default: return getStyle(null);
     }
   }
 

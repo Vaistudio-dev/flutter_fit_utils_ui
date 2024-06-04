@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FitTheme(
-      baseTextStyle: GoogleFonts.outfit(),
+      baseTextStyle: GoogleFonts.overpass(),
       child: MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(
