@@ -79,11 +79,41 @@ class MyApp extends StatelessWidget {
                     ),
                   ],
                 ),
+                const ExpansionTile(
+                  title: FitText.title("FitLoadingHandler"),
+                  children: [
+                    LoadingHandlerExample(),
+                  ],
+                ),
               ],
             ),
           ),
         ),
       ),
+    );
+  }
+}
+
+class LoadingHandlerExample extends StatefulWidget {
+  const LoadingHandlerExample({super.key});
+
+  @override
+  State<LoadingHandlerExample> createState() => _LoadingHandlerExampleState();
+}
+
+class _LoadingHandlerExampleState extends State<LoadingHandlerExample> {
+  bool loading = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return FitLoadingHandler(
+      loading: loading,
+      child: FloatingActionButton.small(
+        onPressed: () => setState(() {
+          loading = true;
+        }),
+        child: const Icon(Icons.start),
+      )
     );
   }
 }

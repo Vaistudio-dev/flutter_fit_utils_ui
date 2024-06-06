@@ -16,6 +16,9 @@ class FitTheme extends InheritedWidget {
   /// You can override the theme data for individual [FitTextIcon] if needed.
   final FitTextIconThemeData fitTextIconThemeData;
 
+  /// Behavior for all [FitLoadingHandler].
+  final FitLoadingHandlerBehavior loadingBehavior;
+
   /// Creates a new intance of [FitTheme].
   const FitTheme({
     super.key,
@@ -23,6 +26,7 @@ class FitTheme extends InheritedWidget {
     this.baseTextStyle,
     this.loadingIndicatorSize = FitLoadingIndicator.defaultSize,
     this.fitTextIconThemeData = const FitTextIconThemeData(),
+    this.loadingBehavior = const FitLoadingHandlerBehavior(),
   });
 
   /// Gets the closest [FitTheme] in the Widget Tree.
