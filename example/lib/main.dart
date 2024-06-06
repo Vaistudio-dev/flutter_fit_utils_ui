@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_fit_utils_ui/flutter_fit_utils_ui.dart';
 import 'package:google_fonts/google_fonts.dart';
 

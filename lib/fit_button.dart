@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'fit_theme.dart';
+
 /// Wrapper for buttons.
 class FitButton extends StatelessWidget {
   /// Execute when tapping on the button.
@@ -37,6 +39,19 @@ class FitButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final FitTheme? fitTheme = FitTheme.of(context);
+
+    ButtonStyle? style;
+    if (fitTheme != null) {
+      style = ButtonStyle(
+        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+          RoundedRectangleBorder(
+            borderRadius: fitTheme.baseRadius,
+          ),
+        ),
+      );
+    }
+
     return Container(
       width: width,
       height: height,
@@ -45,6 +60,7 @@ class FitButton extends StatelessWidget {
       child: FilledButton(
         onPressed: onTap,
         onLongPress: onLongPress,
+        style: style,
         child: child,
       ),
     );
