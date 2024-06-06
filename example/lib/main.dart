@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
                       FitText.headline("Headline"),
                       FitText.title("Title"),
                       FitText.body("Body", style: TextStyle(color: Colors.purple)),
-                      FitText.button("Button"),
+                      FitText.button("Button", style: TextStyle(color: Colors.black)),
                       FitText.tip("Tip"),
                     ],
                   ),

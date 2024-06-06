@@ -163,9 +163,9 @@ class FitText extends StatelessWidget {
       case "body":
         return applyStylingOrder(appTheme.textTheme.bodyLarge);
       case "button":
-        return applyStylingOrder(appTheme.textTheme.bodyLarge).copyWith(
+        return applyStylingOrder(appTheme.textTheme.bodyLarge?.copyWith(
           color: appTheme.colorScheme.onPrimary,
-        );
+        ));
       case "tip":
         return applyStylingOrder(appTheme.textTheme.labelSmall);
       default:
