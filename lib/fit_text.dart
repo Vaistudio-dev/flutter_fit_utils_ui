@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_fit_utils_ui/theme/fit_theme.dart';
+import 'package:flutter_fit_utils_ui/fit_theme.dart';
 
 /// [Text] widget with pre-built styles:
 /// Headline: based on TextTheme.headlineLarge.
