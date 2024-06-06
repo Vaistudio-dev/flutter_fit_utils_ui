@@ -13,6 +13,7 @@ class FitTheme extends InheritedWidget {
   final Size loadingIndicatorSize;
 
   /// Theming properties for [FitTextIcon].
+  /// You can override the theme data for individual [FitTextIcon] if needed.
   final FitTextIconThemeData fitTextIconThemeData;
 
   /// Creates a new intance of [FitTheme].
