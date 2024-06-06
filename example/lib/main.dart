@@ -30,31 +30,36 @@ class MyApp extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const FitText.title("FitText",
-                    margin: EdgeInsets.only(bottom: 12)),
-                const FitText.headline("Headline"),
-                const FitText.title("Title"),
-                const FitText.body("Body", style: TextStyle(color: Colors.purple)),
-                const FitText.button("Button"),
-                const FitText.tip("Tip"),
-                const SizedBox(height: 48),
-                const FitText.title("FitLoadingIndicator",
-                    margin: EdgeInsets.only(bottom: 12)),
-                const FitText.body("Default"),
-                const FitLoadingIndicator(),
-                const SizedBox(height: 12),
-                const FitText.body("Customize it with ProgressIndicatorThemeData"),
-                Theme(
-                  data: ThemeData(
-                    progressIndicatorTheme: const ProgressIndicatorThemeData(
-                      color: Colors.red,
-                    )
-                  ),
-                  child: const FitLoadingIndicator(size: Size(25, 25))
+                const ExpansionTile(
+                  title: FitText.title("FitText"),
+                  children: [
+                    FitText.headline("Headline"),
+                    FitText.title("Title"),
+                    FitText.body("Body", style: TextStyle(color: Colors.purple)),
+                    FitText.button("Button"),
+                    FitText.tip("Tip"),
+                  ],
                 ),
-                const SizedBox(height: 12),
-                const FitText.body("Change the alignment"),
-                const FitLoadingIndicator(alignment: Alignment.centerLeft),
+                ExpansionTile(
+                  title: const FitText.title("FitLoadingIndicator"),
+                  children: [
+                    const FitText.body("Default"),
+                    const FitLoadingIndicator(),
+                    const SizedBox(height: 12),
+                    const FitText.body("Customize it with ProgressIndicatorThemeData"),
+                    Theme(
+                      data: ThemeData(
+                        progressIndicatorTheme: const ProgressIndicatorThemeData(
+                          color: Colors.red,
+                        )
+                      ),
+                      child: const FitLoadingIndicator(size: Size(25, 25))
+                    ),
+                    const SizedBox(height: 12),
+                    const FitText.body("Change the alignment"),
+                    const FitLoadingIndicator(alignment: Alignment.centerLeft),
+                  ],
+                ),
               ],
             ),
           ),
