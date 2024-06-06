@@ -2,9 +2,6 @@ import 'package:flutter/material.dart';
 
 /// Wrapper for buttons.
 class FitButton extends StatelessWidget {
-  /// Padding around the child of the button.
-  static const EdgeInsets _contentPadding = EdgeInsets.only(left: 12.0, right: 12.0, top: 4.0, bottom: 4.0);
-
   /// Execute when tapping on the button.
   final Function()? onTap;
 
@@ -48,10 +45,7 @@ class FitButton extends StatelessWidget {
       child: FilledButton(
         onPressed: onTap,
         onLongPress: onLongPress,
-        child: Container(
-          padding: _contentPadding,
-          child: child,
-        ),
+        child: child,
       ),
     );
   }
