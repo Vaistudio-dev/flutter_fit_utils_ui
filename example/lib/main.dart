@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_fit_utils_ui/flutter_fit_utils_ui.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -84,6 +85,21 @@ class MyApp extends StatelessWidget {
                     title: FitText.title("FitLoadingHandler"),
                     children: [
                       LoadingHandlerExample(),
+                    ],
+                  ),
+                  ExpansionTile(
+                    title: const FitText.title("FitDiaporama"),
+                    children: [
+                      SizedBox(
+                        height: 100,
+                        width: MediaQuery.of(context).size.width,
+                        child: const FitDiaporama(
+                          images: [
+                            NetworkImage("https://avatars.githubusercontent.com/u/14101776?s=280&v=4"),
+                            NetworkImage("https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Google-flutter-logo.svg/2560px-Google-flutter-logo.svg.png"),
+                          ],
+                        ),
+                      ),
                     ],
                   ),
                 ],
