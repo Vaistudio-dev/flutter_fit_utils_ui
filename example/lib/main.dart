@@ -60,6 +60,26 @@ class MyApp extends StatelessWidget {
                     const FitLoadingIndicator(alignment: Alignment.centerLeft),
                   ],
                 ),
+                const ExpansionTile(
+                  title: FitText.title("FitTextIcon"),
+                  children: [
+                    FitText.body("Default"),
+                    FitTextIcon(
+                      text: FitText.body("Information"),
+                      icon: Icon(Icons.abc),
+                    ),
+                    SizedBox(height: 12),
+                    FitText.body("Custom"),
+                    FitTextIcon(
+                      text: FitText.body("Information"),
+                      icon: Icon(Icons.book),
+                      themeData: FitTextIconThemeData(
+                        spacing: 12,
+                        contentOrder: TextIconOrder.ti,
+                      ),
+                    ),
+                  ],
+                ),
               ],
             ),
           ),

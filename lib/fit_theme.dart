@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_fit_utils_ui/fit_loading_indicator.dart';
+import 'package:flutter_fit_utils_ui/flutter_fit_utils_ui.dart';
 
 /// Theme data with extended functionnalities.
 class FitTheme extends InheritedWidget {
@@ -12,12 +12,16 @@ class FitTheme extends InheritedWidget {
   /// You can override the size for individual loading indicators if needed.
   final Size loadingIndicatorSize;
 
+  /// Theming properties for [FitTextIcon].
+  final FitTextIconThemeData fitTextIconThemeData;
+
   /// Creates a new intance of [FitTheme].
   const FitTheme({
     super.key,
     required super.child,
     this.baseTextStyle,
-    this.loadingIndicatorSize = FitLoadingIndicator.defaultSize
+    this.loadingIndicatorSize = FitLoadingIndicator.defaultSize,
+    this.fitTextIconThemeData = const FitTextIconThemeData(),
   });
 
   /// Gets the closest [FitTheme] in the Widget Tree.
