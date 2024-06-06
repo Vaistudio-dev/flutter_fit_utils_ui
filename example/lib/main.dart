@@ -116,9 +116,18 @@ class MyApp extends StatelessWidget {
                       ),
                     ],
                   ),
-                  FitButton(
-                    onTap: () {},
-                    child: const FitText.button("Button"),
+                  ExpansionTile(
+                    title: const FitText.title("FitButton"),
+                    children: [
+                      FitButton(
+                        onTap: () {},
+                        child: const FitText.button("Save"),
+                      ),
+                      FitButton(
+                        onTap: () {},
+                        child: const Icon(Icons.save),
+                      ),
+                    ],
                   ),
                 ],
               ),
