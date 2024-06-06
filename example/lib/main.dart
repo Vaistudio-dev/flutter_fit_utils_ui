@@ -116,6 +116,10 @@ class MyApp extends StatelessWidget {
                       ),
                     ],
                   ),
+                  FitButton(
+                    onTap: () {},
+                    child: const FitText.button("Button"),
+                  ),
                 ],
               ),
             ),

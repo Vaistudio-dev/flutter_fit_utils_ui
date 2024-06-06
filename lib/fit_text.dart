@@ -5,7 +5,7 @@ import 'package:flutter_fit_utils_ui/fit_theme.dart';
 /// Headline: based on TextTheme.headlineLarge.
 /// Title: based on TextTheme.titleLarge.
 /// Body: based on TextTheme.bodyLarge.
-/// Button: based on TextTheme.labelLarge.
+/// Button: based on TextTheme.bodyLarge.
 /// Tip: based on TextTheme.labelSmall.
 /// 
 /// The text style is also based on FitTheme.baseTextStyle.
@@ -151,7 +151,7 @@ class FitText extends StatelessWidget {
     final ThemeData appTheme = Theme.of(context);
     final FitTheme? fitTheme = FitTheme.of(context);
 
-    applyStylingOrder(mainStyle) =>
+    TextStyle applyStylingOrder(mainStyle) =>
         mainStyle?.merge(fitTheme?.baseTextStyle?.merge(style) ?? style) ??
         (fitTheme?.baseTextStyle?.merge(style) ?? style);
 
@@ -163,7 +163,9 @@ class FitText extends StatelessWidget {
       case "body":
         return applyStylingOrder(appTheme.textTheme.bodyLarge);
       case "button":
-        return applyStylingOrder(appTheme.textTheme.labelLarge);
+        return applyStylingOrder(appTheme.textTheme.bodyLarge).copyWith(
+          color: appTheme.colorScheme.onPrimary,
+        );
       case "tip":
         return applyStylingOrder(appTheme.textTheme.labelSmall);
       default:

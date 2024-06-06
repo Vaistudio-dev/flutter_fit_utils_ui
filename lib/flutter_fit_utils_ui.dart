@@ -9,3 +9,4 @@ export 'fit_loading_handler/fit_loading_handler.dart';
 export 'fit_loading_handler/loading_handler_behavior.dart';
 export 'fit_diaporama.dart';
 export 'fit_image_card.dart';
+export 'fit_button.dart';
