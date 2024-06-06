@@ -102,6 +102,20 @@ class MyApp extends StatelessWidget {
                       ),
                     ],
                   ),
+                  ExpansionTile(
+                    title: const FitText.title("FitImageCard"),
+                    children: [
+                      Container(
+                        margin: const EdgeInsets.all(12),
+                        child: FitImageCard(
+                          onTap: () {},
+                          image: const NetworkImage("https://avatars.githubusercontent.com/u/14101776?s=280&v=4"),
+                          title: "Flutter",
+                          description: "Flutter is awesome!",
+                        ),
+                      ),
+                    ],
+                  ),
                 ],
               ),
             ),

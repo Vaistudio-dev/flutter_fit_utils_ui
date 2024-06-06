@@ -3,6 +3,8 @@ import 'package:flutter_fit_utils_ui/flutter_fit_utils_ui.dart';
 
 /// Theme data with extended functionnalities.
 class FitTheme extends InheritedWidget {
+  static const double _defaultBaseRadius = 22;
+
   /// Base text style. This style will be applied to all fit ui components
   /// that uses the [Text] widget.
   /// For example, use this base style to set the font family.
@@ -19,6 +21,12 @@ class FitTheme extends InheritedWidget {
   /// Behavior for all [FitLoadingHandler].
   final FitLoadingHandlerBehavior loadingBehavior;
 
+  /// Base radius.
+  /// Use it for cards, images, etc.
+  final BorderRadius baseRadius;
+
+  BorderRadius get innerRadius => BorderRadius.all(Radius.circular(baseRadius.bottomLeft.x / 2));
+
   /// Creates a new intance of [FitTheme].
   const FitTheme({
     super.key,
@@ -27,6 +35,7 @@ class FitTheme extends InheritedWidget {
     this.loadingIndicatorSize = FitLoadingIndicator.defaultSize,
     this.fitTextIconThemeData = const FitTextIconThemeData(),
     this.loadingBehavior = const FitLoadingHandlerBehavior(),
+    this.baseRadius = const BorderRadius.all(Radius.circular(_defaultBaseRadius)),
   });
 
   /// Gets the closest [FitTheme] in the Widget Tree.

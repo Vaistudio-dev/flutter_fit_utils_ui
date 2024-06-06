@@ -8,3 +8,4 @@ export 'fit_text_icon/fit_text_icon_theme_data.dart';
 export 'fit_loading_handler/fit_loading_handler.dart';
 export 'fit_loading_handler/loading_handler_behavior.dart';
 export 'fit_diaporama.dart';
+export 'fit_image_card.dart';
