@@ -26,66 +26,68 @@ class MyApp extends StatelessWidget {
           ),
           body: Container(
             margin: const EdgeInsets.only(top: 12, left: 12),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const ExpansionTile(
-                  title: FitText.title("FitText"),
-                  children: [
-                    FitText.headline("Headline"),
-                    FitText.title("Title"),
-                    FitText.body("Body", style: TextStyle(color: Colors.purple)),
-                    FitText.button("Button"),
-                    FitText.tip("Tip"),
-                  ],
-                ),
-                ExpansionTile(
-                  title: const FitText.title("FitLoadingIndicator"),
-                  children: [
-                    const FitText.body("Default"),
-                    const FitLoadingIndicator(),
-                    const SizedBox(height: 12),
-                    const FitText.body("Customize it with ProgressIndicatorThemeData"),
-                    Theme(
-                      data: ThemeData(
-                        progressIndicatorTheme: const ProgressIndicatorThemeData(
-                          color: Colors.red,
-                        )
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const ExpansionTile(
+                    title: FitText.title("FitText"),
+                    children: [
+                      FitText.headline("Headline"),
+                      FitText.title("Title"),
+                      FitText.body("Body", style: TextStyle(color: Colors.purple)),
+                      FitText.button("Button"),
+                      FitText.tip("Tip"),
+                    ],
+                  ),
+                  ExpansionTile(
+                    title: const FitText.title("FitLoadingIndicator"),
+                    children: [
+                      const FitText.body("Default"),
+                      const FitLoadingIndicator(),
+                      const SizedBox(height: 12),
+                      const FitText.body("Customize it with ProgressIndicatorThemeData"),
+                      Theme(
+                        data: ThemeData(
+                          progressIndicatorTheme: const ProgressIndicatorThemeData(
+                            color: Colors.red,
+                          )
+                        ),
+                        child: const FitLoadingIndicator(size: Size(25, 25))
                       ),
-                      child: const FitLoadingIndicator(size: Size(25, 25))
-                    ),
-                    const SizedBox(height: 12),
-                    const FitText.body("Change the alignment"),
-                    const FitLoadingIndicator(alignment: Alignment.centerLeft),
-                  ],
-                ),
-                const ExpansionTile(
-                  title: FitText.title("FitTextIcon"),
-                  children: [
-                    FitText.body("Default"),
-                    FitTextIcon(
-                      text: FitText.body("Information"),
-                      icon: Icon(Icons.abc),
-                    ),
-                    SizedBox(height: 12),
-                    FitText.body("Custom"),
-                    FitTextIcon(
-                      text: FitText.body("Information"),
-                      icon: Icon(Icons.book),
-                      themeData: FitTextIconThemeData(
-                        spacing: 12,
-                        contentOrder: TextIconOrder.ti,
+                      const SizedBox(height: 12),
+                      const FitText.body("Change the alignment"),
+                      const FitLoadingIndicator(alignment: Alignment.centerLeft),
+                    ],
+                  ),
+                  const ExpansionTile(
+                    title: FitText.title("FitTextIcon"),
+                    children: [
+                      FitText.body("Default"),
+                      FitTextIcon(
+                        text: FitText.body("Information"),
+                        icon: Icon(Icons.abc),
                       ),
-                    ),
-                  ],
-                ),
-                const ExpansionTile(
-                  title: FitText.title("FitLoadingHandler"),
-                  children: [
-                    LoadingHandlerExample(),
-                  ],
-                ),
-              ],
+                      SizedBox(height: 12),
+                      FitText.body("Custom"),
+                      FitTextIcon(
+                        text: FitText.body("Information"),
+                        icon: Icon(Icons.book),
+                        themeData: FitTextIconThemeData(
+                          spacing: 12,
+                          contentOrder: TextIconOrder.ti,
+                        ),
+                      ),
+                    ],
+                  ),
+                  const ExpansionTile(
+                    title: FitText.title("FitLoadingHandler"),
+                    children: [
+                      LoadingHandlerExample(),
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
         ),
