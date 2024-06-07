@@ -128,6 +128,22 @@ class MyApp extends StatelessWidget {
                       ),
                     ],
                   ),
+                  const ExpansionTile(
+                    title: FitText.title("FitChips"),
+                    children: [
+                      FitChip(text: "Chip"),
+                      FitRadioChips(
+                        title: "Options",
+                        options: [
+                          "Chip 1",
+                          "Chip 2",
+                          "Chip 3",
+                          "Chip 4",
+                          "Chip 5",
+                        ],
+                      ),
+                    ],
+                  ),
                 ],
               ),
             ),
