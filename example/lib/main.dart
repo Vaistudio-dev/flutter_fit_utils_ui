@@ -13,6 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return FitTheme(
       baseTextStyle: GoogleFonts.overpass(),
+      pageMargin: const EdgeInsets.all(12),
       child: Builder(
         builder: (context) {
           return MaterialApp(
@@ -37,7 +38,6 @@ class MyApp extends StatelessWidget {
                     margin: const EdgeInsets.only(top: 12, left: 12),
                     child: SingleChildScrollView(
                       child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           const ExpansionTile(
                             title: FitText.title("FitText"),
@@ -207,6 +207,14 @@ class MyApp extends StatelessWidget {
                               ),
                             ],
                           ),
+                          FitButton(
+                            onTap: () {
+                              Navigator.of(context).push(
+                                MaterialPageRoute(builder: (context) => const ExampleSettings())
+                              );
+                            },
+                            child: const FitText.button("Go to settings"),
+                          ),
                         ],
                       ),
                     ),
@@ -220,6 +228,64 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+class ExampleSettings extends StatelessWidget {
+  const ExampleSettings({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        title: const FitText("Example Settings"),
+      ),
+      body: SingleChildScrollView(
+        child: Container(
+          margin: FitTheme.of(context)?.pageMargin,
+          child: const Column(
+            children: [
+              SettingSection(
+                title: "Section #1",
+                children: [
+                  FitSettingItem(title: "Name", subtitle: "John Doe"),
+                  FitSettingItem(title: "Address", subtitle: "Place 123 drive"),
+                  FitSettingItem(title: "Name", subtitle: "John Doe"),
+                  FitSettingsCruncher(
+                    crunchText: "Info",
+                    children: [
+                      FitSettingItem(title: "Name", subtitle: "John Doe"),
+                      FitSettingItem(title: "Address", subtitle: "Place 123 drive"),
+                      FitSettingItem(title: "Name", subtitle: "John Doe"),
+                    ],
+                  ),
+                ],
+              ),
+              SettingSection(
+                title: "Section #2",
+                children: [
+                  FitSettingsCruncher(
+                    crunchText: "Info",
+                    children: [
+                      FitSettingsCruncher(
+                        crunchText: "Sub info",
+                        children: [
+                          FitSettingItem(title: "Name", subtitle: "John Doe"),
+                          FitSettingItem(title: "Address", subtitle: "Place 123 drive"),
+                          FitSettingItem(title: "Name", subtitle: "John Doe"),
+                        ],
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
 
 class LoadingHandlerExample extends StatefulWidget {
   const LoadingHandlerExample({super.key});

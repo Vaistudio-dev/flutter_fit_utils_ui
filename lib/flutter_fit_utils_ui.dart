@@ -18,3 +18,7 @@ export 'fit_swipeable/swipe_option.dart';
 export 'fit_swipeable/fit_swipeable.dart';
 export 'context_extension.dart';
 export 'fit_text_input.dart';
+export 'fit_settings/setting_spacer.dart';
+export 'fit_settings/fit_setting_item.dart';
+export 'fit_settings/fit_setting_section.dart';
+export 'fit_settings/fit_setting_cruncher.dart';
