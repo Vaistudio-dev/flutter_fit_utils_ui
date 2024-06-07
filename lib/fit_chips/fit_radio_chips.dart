@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_fit_utils_ui/flutter_fit_utils_ui.dart';
 
-import '../fit_text.dart';
-
 /// Radio buttons represented by a list of [FitChip].
 class FitRadioChips extends StatefulWidget {
   static const int _defaultPreSelectedIndex = 0;
@@ -16,6 +14,7 @@ class FitRadioChips extends StatefulWidget {
   /// Index of the pre selected chip.
   final int selectedIndex;
 
+  /// Execute when a new option is selected, and pass the newly selected option index.
   final Function(int)? onSelectionChanged;
 
   /// Creates a new [FitRadioChips].
@@ -54,16 +53,15 @@ class _FitRadioChipsState extends State<FitRadioChips> {
                 Container(
                   margin: const EdgeInsets.only(right: 12),
                   child: FitChip(
-                    onTap: (index) {
+                    onTap: () {
                       setState(() {
-                        selectedIndex = index;
+                        selectedIndex = i;
                   
                         if (widget.onSelectionChanged != null) {
-                          widget.onSelectionChanged!(index);
+                          widget.onSelectionChanged!(i);
                         }
                       });
                     },
-                    chipId: i,
                     text: widget.options[i],
                     selected: i == selectedIndex,
                   ),

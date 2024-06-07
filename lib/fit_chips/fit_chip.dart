@@ -5,11 +5,6 @@ import '../fit_theme.dart';
 
 /// Wrapper for a simple chip.
 class FitChip extends StatelessWidget {
-  static const int _defaultChipId = 0;
-
-  /// Id of the chip.
-  final int chipId;
-
   /// Text to display inside the chip.
   final String text;
 
@@ -17,15 +12,14 @@ class FitChip extends StatelessWidget {
   /// If selected, a [FitChip] will be filled. Otherwise, it will be hollow.
   final bool selected;
 
-  /// Execute when tapping the chip, and pass the chip id.
-  final Function(int)? onTap;
+  /// Execute when tapping the chip.
+  final Function()? onTap;
 
   /// Creates a new [FitChip].
   const FitChip({
     super.key,
     required this.text,
     this.selected = true,
-    this.chipId = _defaultChipId,
     this.onTap,
   });
 
@@ -36,7 +30,7 @@ class FitChip extends StatelessWidget {
     return OutlinedButton(
       onPressed: () {
         if (onTap != null) {
-          onTap!(chipId);
+          onTap!();
         }
       },
       style: ButtonStyle(

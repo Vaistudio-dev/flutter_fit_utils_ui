@@ -144,6 +144,20 @@ class MyApp extends StatelessWidget {
                       ),
                     ],
                   ),
+                  const ExpansionTile(
+                    title: FitText.title("FitRadioCards"),
+                    children: [
+                      FitRadioCards(
+                        title: FitText.title("Options"),
+                        options: [
+                          ("Option 1", "Lorem Ipsum"),
+                          ("Option 2", "Lorem Ipsum"),
+                          ("Option 3", "Lorem Ipsum"),
+                          ("Option 4", "Lorem Ipsum"),
+                        ],
+                      ),
+                    ],
+                  ),
                 ],
               ),
             ),

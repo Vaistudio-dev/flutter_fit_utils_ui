@@ -12,3 +12,5 @@ export 'fit_image_card.dart';
 export 'fit_button.dart';
 export 'fit_chips/fit_chip.dart';
 export 'fit_chips/fit_radio_chips.dart';
+export 'fit_selectable_card/fit_selectable_card.dart';
+export 'fit_selectable_card/fit_radio_cards.dart';
