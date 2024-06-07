@@ -22,6 +22,9 @@ class FitTheme extends InheritedWidget {
   /// Behavior for all [FitLoadingHandler].
   final FitLoadingHandlerBehavior loadingBehavior;
 
+  /// Margin that should be applied on all pages.
+  final EdgeInsets? pageMargin;
+
   /// Base radius.
   /// Use it for cards, images, etc.
   final BorderRadius baseRadius;
@@ -33,6 +36,7 @@ class FitTheme extends InheritedWidget {
     super.key,
     required super.child,
     this.baseTextStyle,
+    this.pageMargin,
     this.loadingIndicatorSize = FitLoadingIndicator.defaultSize,
     this.fitTextIconThemeData = const FitTextIconThemeData(),
     this.loadingBehavior = const FitLoadingHandlerBehavior(),

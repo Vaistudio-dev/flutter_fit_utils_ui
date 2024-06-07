@@ -17,3 +17,4 @@ export 'fit_selectable_card/fit_radio_cards.dart';
 export 'fit_swipeable/swipe_option.dart';
 export 'fit_swipeable/fit_swipeable.dart';
 export 'context_extension.dart';
+export 'fit_text_input.dart';
