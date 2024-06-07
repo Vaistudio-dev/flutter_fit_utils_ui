@@ -14,3 +14,6 @@ export 'fit_chips/fit_chip.dart';
 export 'fit_chips/fit_radio_chips.dart';
 export 'fit_selectable_card/fit_selectable_card.dart';
 export 'fit_selectable_card/fit_radio_cards.dart';
+export 'fit_swipeable/swipe_option.dart';
+export 'fit_swipeable/fit_swipeable.dart';
+export 'context_extension.dart';
