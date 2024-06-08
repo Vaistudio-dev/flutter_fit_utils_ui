@@ -6,7 +6,7 @@ import 'package:flutter_fit_utils_ui/fit_theme.dart';
 /// Title: based on TextTheme.titleLarge.
 /// Body: based on TextTheme.bodyLarge.
 /// Button: based on TextTheme.bodyLarge.
-/// Tip: based on TextTheme.labelSmall.
+/// hint: based on TextTheme.labelSmall.
 /// 
 /// The text style is also based on FitTheme.baseTextStyle.
 /// Here is the order for merging the 3 styles together:
@@ -29,7 +29,7 @@ class FitText extends StatelessWidget {
   final String text;
 
   /// Custom styling to apply.
-  /// This style will override the role style (Headline, Title, Body, Button, Tip)
+  /// This style will override the role style (Headline, Title, Body, Button, hint)
   /// and [FitTheme.baseTextStyle].
   final TextStyle? style;
 
@@ -132,8 +132,8 @@ class FitText extends StatelessWidget {
     this.overflow,
   }) : _role = "button";
 
-  /// Creates a tip text with the tip role.
-  const FitText.tip(
+  /// Creates a hint text with the hint role.
+  const FitText.hint(
     this.text, {
     super.key,
     this.style,
@@ -145,7 +145,7 @@ class FitText extends StatelessWidget {
     this.alignment,
     this.maxLines = 5,
     this.overflow,
-  }) : _role = "tip";
+  }) : _role = "hint";
 
   TextStyle? _getStyle(BuildContext context) {
     final ThemeData appTheme = Theme.of(context);
@@ -166,7 +166,7 @@ class FitText extends StatelessWidget {
         return applyStylingOrder(appTheme.textTheme.bodyLarge?.copyWith(
           color: appTheme.colorScheme.onPrimary,
         ));
-      case "tip":
+      case "hint":
         return applyStylingOrder(appTheme.textTheme.labelSmall);
       default:
         return applyStylingOrder(null);

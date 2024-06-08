@@ -30,7 +30,7 @@ class FitSettingItem extends StatelessWidget {
       title: FitText.body(
         title,
       ),
-      subtitle: subtitle != "" ? FitText.tip(
+      subtitle: subtitle != "" ? FitText.hint(
         subtitle,
       ) : null,
     );
