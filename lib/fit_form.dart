@@ -13,8 +13,28 @@ class FitForm extends StatefulWidget {
   /// Callback lorsqu'on appuie sur le bouton de confirmation finale du formulaire.
   final Function() onEnd;
 
+  /// Text for the continue button.
+  final String? continueText;
+
+  /// Text for the back button.
+  final String? backText;
+
+  /// Text for the done button.
+  final String? doneText;
+
+  /// App bar of the page.
+  final AppBar? appBar;
+
   /// Formulaire qui contient plusieurs page.
-  const FitForm({super.key, required this.pages, required this.onEnd});
+  const FitForm({
+    super.key,
+    required this.pages,
+    required this.onEnd,
+    this.backText,
+    this.continueText,
+    this.doneText,
+    this.appBar,
+  });
 
   @override
   State<FitForm> createState() => _FitFormState();
@@ -26,104 +46,105 @@ class _FitFormState extends State<FitForm> {
   final PageController pageController = PageController();
   int activePage = 0;
 
-  late Widget nextButton = Align(
-    child: Container(
-      width: double.infinity,
-      margin: const EdgeInsets.only(right: 24, left: 24, bottom: 24),
-      child: FitButton(
-        onTap: () {
-          if (Form.of(context).validate()) {
-            pageController.nextPage(
-              duration: transitionDuration,
-              curve: Curves.easeIn,
-            );
-          }
-        },
-        child: const FitText.button("doContinue"),
-      ),
-    ),
-  );
-
-  late Widget doneButton = Align(
-    child: Container(
-      width: double.infinity,
-      margin: const EdgeInsets.only(right: 24, left: 24, bottom: 24),
-      child: FitButton(
-        onTap: () {
-          if (Form.of(context).validate()) {
-            widget.onEnd();
-          }
-        },
-        child: const FitText.button("done"),
-      ),
-    ),
-  );
-
-  late Widget backButton = Align(
-    child: Container(
-      width: double.infinity,
-      margin: const EdgeInsets.only(right: 24, left: 24, bottom: 24),
-      child: FitButton(
-        onTap: () {
-          pageController.previousPage(
-            duration: transitionDuration,
-            curve: Curves.easeIn,
-          );
-        },
-        child: const FitText.button("back"),
-      ),
-    ),
-  );
-
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: FitTheme.of(context)?.pageMargin,
-      child: Builder(
-        builder: (context) {
-          return Column(
-            children: [
-              Expanded(
-                child: PageView(
-                  controller: pageController,
-                  //physics: const NeverScrollableScrollPhysics(),
-                  onPageChanged: (int page) {
-                    setState(() {
-                      activePage = page;
-                    });
-                  },
+    return Scaffold(
+      appBar: widget.appBar,
+      body: SafeArea(
+        child: Form(
+          child: Container(
+            margin: FitTheme.of(context)?.pageMargin,
+            child: Builder(
+              builder: (context) {
+                return Column(
                   children: [
-                    for (final page in widget.pages)
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                    Expanded(
+                      child: PageView(
+                        controller: pageController,
+                        physics: const NeverScrollableScrollPhysics(),
+                        onPageChanged: (int page) {
+                          setState(() {
+                            activePage = page;
+                          });
+                        },
                         children: [
-                          Expanded(
-                            child: page,
-                          ),
-                          if (activePage == widget.pages.length - 1)
-                            doneButton
-                          else
-                            nextButton,
-                          if (activePage != 0)
-                            backButton,
+                          for (final page in widget.pages)
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Expanded(
+                                  child: page,
+                                ),
+                                if (activePage == widget.pages.length - 1)
+                                  Align( // Done button.
+                                    child: Container(
+                                      width: double.infinity,
+                                      margin: const EdgeInsets.only(right: 24, left: 24, bottom: 24),
+                                      child: FitButton(
+                                        onTap: () {
+                                          if (Form.of(context).validate()) {
+                                            widget.onEnd();
+                                          }
+                                        },
+                                        child: FitText.button(widget.doneText ?? "Done"),
+                                      ),
+                                    ),
+                                  )
+                                else
+                                  Align( // Next button.
+                                    child: Container(
+                                      width: double.infinity,
+                                      margin: const EdgeInsets.only(right: 24, left: 24, bottom: 24),
+                                      child: FitButton(
+                                        onTap: () {
+                                          if (Form.of(context).validate()) {
+                                            pageController.nextPage(
+                                              duration: transitionDuration,
+                                              curve: Curves.easeIn,
+                                            );
+                                          }
+                                        },
+                                        child: FitText.button(widget.continueText ?? "Continue"),
+                                      ),
+                                    ),
+                                  ),
+                                if (activePage != 0)
+                                  Align( // Back button.
+                                    child: Container(
+                                      width: double.infinity,
+                                      margin: const EdgeInsets.only(right: 24, left: 24, bottom: 24),
+                                      child: FitButton(
+                                        onTap: () {
+                                          pageController.previousPage(
+                                            duration: transitionDuration,
+                                            curve: Curves.easeIn,
+                                          );
+                                        },
+                                        child: FitText.button(widget.backText ?? "Back"),
+                                      ),
+                                    ),
+                                  ),
+                              ],
+                            )
                         ],
-                      )
+                      ),
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: List<Widget>.generate(widget.pages.length, (index) => Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 10),
+                        child: CircleAvatar(
+                          radius: 4,
+                          backgroundColor: activePage == index ? Theme.of(context).colorScheme.primary : Theme.of(context).colorScheme.secondary,
+                        ),
+                      )),
+                    ),
                   ],
-                ),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: List<Widget>.generate(widget.pages.length, (index) => Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 10),
-                  child: CircleAvatar(
-                    radius: 4,
-                    backgroundColor: activePage == index ? Theme.of(context).colorScheme.primary : Theme.of(context).colorScheme.secondary,
-                  ),
-                )),
-              ),
-            ],
-          );
-        },
+                );
+              },
+            ),
+          ),
+        ),
       ),
     );
   }
