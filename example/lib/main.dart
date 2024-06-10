@@ -207,21 +207,72 @@ class MyApp extends StatelessWidget {
                               ),
                             ],
                           ),
-                          FitButton(
-                            onTap: () {
-                              Navigator.of(context).push(
-                                MaterialPageRoute(builder: (context) => const ExampleSettings())
-                              );
-                            },
-                            child: const FitText.button("Go to settings"),
+                          ExpansionTile(
+                            title: const FitText.title("FitSettings"),
+                            children: [
+                              FitButton(
+                                onTap: () {
+                                  Navigator.of(context).push(
+                                    MaterialPageRoute(builder: (context) => const ExampleSettings())
+                                  );
+                                },
+                                child: const FitText.button("Go to settings"),
+                              ),
+                            ],
                           ),
-                          FitButton(
-                            onTap: () {
-                              Navigator.of(context).push(
-                                MaterialPageRoute(builder: (context) => const ExampleForm())
-                              );
-                            },
-                            child: const FitText.button("Go to form"),
+                          ExpansionTile(
+                            title: const FitText.title("FitForm"),
+                            children: [
+                              FitButton(
+                                onTap: () {
+                                  Navigator.of(context).push(
+                                    MaterialPageRoute(builder: (context) => const ExampleForm())
+                                  );
+                                },
+                                child: const FitText.button("Go to form"),
+                              ),
+                            ],
+                          ),
+                          ExpansionTile(
+                            title: const FitText.title("FitMenu"),
+                            children: [
+                              FitButton(
+                                onTap: () {
+                                  showFitMenu(
+                                    context,
+                                    FitMenu(
+                                      mainIcon: Icons.menu,
+                                      title: "Fit Menu",
+                                      subTitle: "Looks nice doesn't it ?",
+                                      menuItems: [
+                                        FitMenuItem(
+                                          icon: Icons.abc,
+                                          title: "Item 1",
+                                          onTap: (context, item) {
+                                            context.showSnackbar("Hello from item 1 !");
+                                          }
+                                        ),
+                                        FitMenuItem(
+                                          icon: Icons.home,
+                                          title: "Item 2",
+                                          onTap: (context, item) {
+                                            context.showSnackbar("Hello from item 2 !");
+                                          }
+                                        ),
+                                        FitMenuItem(
+                                          icon: Icons.book,
+                                          title: "Item 3",
+                                          onTap: (context, item) {
+                                            context.showSnackbar("Hello from item 3 !");
+                                          }
+                                        ),
+                                      ],
+                                    ),
+                                  );
+                                },
+                                child: const FitText.button("Open menu"),
+                              ),
+                            ],
                           ),
                         ],
                       ),

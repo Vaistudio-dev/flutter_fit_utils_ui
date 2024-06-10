@@ -24,3 +24,5 @@ export 'fit_settings/fit_setting_section.dart';
 export 'fit_settings/fit_setting_cruncher.dart';
 export 'fit_page.dart';
 export 'fit_form.dart';
+export 'fit_menu/fit_menu_item.dart';
+export 'fit_menu/fit_menu.dart';
