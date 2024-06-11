@@ -274,6 +274,12 @@ class MyApp extends StatelessWidget {
                               ),
                             ],
                           ),
+                          const ExpansionTile(
+                            title: FitText.title("FitSort"),
+                            children: [
+                              FitSortExample(),
+                            ],
+                          ),
                         ],
                       ),
                     ),
@@ -286,6 +292,51 @@ class MyApp extends StatelessWidget {
       ),
     );
   }
+}
+
+class FitSortExample extends StatefulWidget {
+  const FitSortExample({super.key});
+
+  @override
+  State<FitSortExample> createState() => _FitSortExampleState();
+}
+
+class _FitSortExampleState extends State<FitSortExample> {
+  List<Sortable> data = [
+    ExampleClass("a"),
+    ExampleClass("b"),
+    ExampleClass("c"),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        FitSort(
+          data: data,
+          availableAlgorithms: [AToZSort(), ZToASort()],
+          onSortChanged: (newData, sort) {
+            setState(() {
+              data = newData;
+            });
+          },
+        ),
+        for (final d in data)
+          ListTile(
+            title: FitText.body(d.getComparator().toString()),
+          ),
+      ],
+    );
+  }
+}
+
+class ExampleClass implements Sortable {
+  final String data;
+
+  ExampleClass(this.data);
+
+  @override
+  Object getComparator() => data;
 }
 
 class ExampleForm extends StatefulWidget {

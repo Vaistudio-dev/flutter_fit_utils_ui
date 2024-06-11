@@ -26,3 +26,6 @@ export 'fit_page.dart';
 export 'fit_form.dart';
 export 'fit_menu/fit_menu_item.dart';
 export 'fit_menu/fit_menu.dart';
+export 'fit_sort/fit_sort.dart';
+export 'fit_sort/sort_algorithm.dart';
+export 'fit_sort/sortable.dart';
