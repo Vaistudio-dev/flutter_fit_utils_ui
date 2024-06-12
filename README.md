@@ -4,7 +4,9 @@ A flutter package that offers pre-built UI components to build your UI faster. T
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+A flutter package that offers a wide variety of UI tools to make your apps faster, and more efficiently. There are 15+ prebuilt widgets available to use in just a few lines of code.
+
+https://github.com/s0punk/flutter_fit_utils_ui/assets/59456672/cd4fa378-9687-42d5-a113-1f1bb2658436
 
 ## Getting started
 
