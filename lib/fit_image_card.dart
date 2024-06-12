@@ -18,6 +18,7 @@ class FitImageCard extends StatelessWidget {
 
   /// Title of the card.
   final String? title;
+
   /// Subtitle of the card.
   final String? description;
 

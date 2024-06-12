@@ -29,7 +29,8 @@ class FitTheme extends InheritedWidget {
   /// Use it for cards, images, etc.
   final BorderRadius baseRadius;
 
-  BorderRadius get innerRadius => BorderRadius.all(Radius.circular(baseRadius.bottomLeft.x / 2));
+  BorderRadius get innerRadius =>
+      BorderRadius.all(Radius.circular(baseRadius.bottomLeft.x / 2));
 
   /// Creates a new intance of [FitTheme].
   const FitTheme({
@@ -40,7 +41,8 @@ class FitTheme extends InheritedWidget {
     this.loadingIndicatorSize = FitLoadingIndicator.defaultSize,
     this.fitTextIconThemeData = const FitTextIconThemeData(),
     this.loadingBehavior = const FitLoadingHandlerBehavior(),
-    this.baseRadius = const BorderRadius.all(Radius.circular(defaultBaseRadius)),
+    this.baseRadius =
+        const BorderRadius.all(Radius.circular(defaultBaseRadius)),
   });
 
   /// Gets the closest [FitTheme] in the Widget Tree.

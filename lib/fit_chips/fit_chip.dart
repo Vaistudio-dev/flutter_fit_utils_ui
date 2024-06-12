@@ -36,22 +36,33 @@ class FitChip extends StatelessWidget {
       style: ButtonStyle(
         side: MaterialStateProperty.all<BorderSide>(
           BorderSide(
-            color: (selected ?
-            (appTheme.chipTheme.selectedColor ?? appTheme.colorScheme.primary)
-            : (appTheme.chipTheme.secondarySelectedColor ?? appTheme.colorScheme.secondary)),
+            color: (selected
+                ? (appTheme.chipTheme.selectedColor ??
+                    appTheme.colorScheme.primary)
+                : (appTheme.chipTheme.secondarySelectedColor ??
+                    appTheme.colorScheme.secondary)),
           ),
         ),
-        shape: MaterialStateProperty.all<RoundedRectangleBorder>(RoundedRectangleBorder(
-          borderRadius: FitTheme.of(context)?.baseRadius ?? const BorderRadius.all(Radius.circular(FitTheme.defaultBaseRadius)),
+        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+            RoundedRectangleBorder(
+          borderRadius: FitTheme.of(context)?.baseRadius ??
+              const BorderRadius.all(
+                  Radius.circular(FitTheme.defaultBaseRadius)),
         )),
         backgroundColor: selected
-            ? MaterialStateProperty.all<Color>(appTheme.chipTheme.selectedColor ?? appTheme.colorScheme.primary)
-            : MaterialStateProperty.all<Color>(appTheme.chipTheme.secondarySelectedColor ?? appTheme.colorScheme.secondary),
+            ? MaterialStateProperty.all<Color>(
+                appTheme.chipTheme.selectedColor ??
+                    appTheme.colorScheme.primary)
+            : MaterialStateProperty.all<Color>(
+                appTheme.chipTheme.secondarySelectedColor ??
+                    appTheme.colorScheme.secondary),
       ),
       child: FitText.body(
         text,
         style: TextStyle(
-          color: selected ? appTheme.colorScheme.onPrimary : appTheme.colorScheme.onSecondary,
+          color: selected
+              ? appTheme.colorScheme.onPrimary
+              : appTheme.colorScheme.onSecondary,
         ),
       ),
     );

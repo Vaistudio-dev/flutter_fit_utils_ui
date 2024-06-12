@@ -38,8 +38,7 @@ class _FitRadioCardsState extends State<FitRadioCards> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        if (widget.title != null)
-          widget.title!,
+        if (widget.title != null) widget.title!,
         const SizedBox(height: 12),
         for (int i = 0; i < widget.options.length; i++)
           FitSelectableCard(

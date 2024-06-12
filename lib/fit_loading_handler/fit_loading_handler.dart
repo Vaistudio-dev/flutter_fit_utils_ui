@@ -15,7 +15,12 @@ class FitLoadingHandler extends StatefulWidget {
   final FitLoadingHandlerBehavior? behavior;
 
   /// Creates a new [FitLoadingHandler].
-  const FitLoadingHandler({super.key, required this.loading, required this.child, this.behavior,});
+  const FitLoadingHandler({
+    super.key,
+    required this.loading,
+    required this.child,
+    this.behavior,
+  });
 
   @override
   State<FitLoadingHandler> createState() => _FitLoadingHandlerState();
@@ -25,7 +30,9 @@ class _FitLoadingHandlerState extends State<FitLoadingHandler> {
   @override
   Widget build(BuildContext context) {
     final FitTheme? fitTheme = FitTheme.of(context);
-    final FitLoadingHandlerBehavior finalBehavior = widget.behavior ?? fitTheme?.loadingBehavior ?? const FitLoadingHandlerBehavior();
+    final FitLoadingHandlerBehavior finalBehavior = widget.behavior ??
+        fitTheme?.loadingBehavior ??
+        const FitLoadingHandlerBehavior();
 
     return Stack(
       children: [

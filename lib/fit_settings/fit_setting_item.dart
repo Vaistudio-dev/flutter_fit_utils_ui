@@ -21,7 +21,13 @@ class FitSettingItem extends StatelessWidget {
   final bool locked;
 
   /// Creates a new [settingItem].
-  const FitSettingItem({super.key, required this.title, this.subtitle = "", this.onTap, this.danger = false, this.locked = false});
+  const FitSettingItem(
+      {super.key,
+      required this.title,
+      this.subtitle = "",
+      this.onTap,
+      this.danger = false,
+      this.locked = false});
 
   @override
   Widget build(BuildContext context) {
@@ -30,9 +36,11 @@ class FitSettingItem extends StatelessWidget {
       title: FitText.body(
         title,
       ),
-      subtitle: subtitle != "" ? FitText.hint(
-        subtitle,
-      ) : null,
+      subtitle: subtitle != ""
+          ? FitText.hint(
+              subtitle,
+            )
+          : null,
     );
   }
 }

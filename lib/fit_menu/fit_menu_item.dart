@@ -32,11 +32,17 @@ class FitMenuItem {
   static bool _defaultShow(_, __) => true;
 
   /// Copies an instance and override properties.
-  FitMenuItem copyWith({String? id, IconData? icon, String? title, Function(BuildContext context, Modelable? item)? onTap, bool Function(BuildContext context, Modelable? item)? show}) => FitMenuItem(
-    id: id ?? this.id,
-    icon: icon ?? this.icon,
-    title: title ?? this.title,
-    onTap: onTap ?? this.onTap,
-    show: show ?? this.show,
-  );
+  FitMenuItem copyWith(
+          {String? id,
+          IconData? icon,
+          String? title,
+          Function(BuildContext context, Modelable? item)? onTap,
+          bool Function(BuildContext context, Modelable? item)? show}) =>
+      FitMenuItem(
+        id: id ?? this.id,
+        icon: icon ?? this.icon,
+        title: title ?? this.title,
+        onTap: onTap ?? this.onTap,
+        show: show ?? this.show,
+      );
 }

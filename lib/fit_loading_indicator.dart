@@ -27,8 +27,12 @@ class FitLoadingIndicator extends StatelessWidget {
       alignment: alignment ?? Alignment.center,
       color: appTheme.scaffoldBackgroundColor,
       child: SizedBox(
-        width: size?.width ?? fitTheme?.loadingIndicatorSize.width ?? defaultSize.width,
-        height: size?.height ?? fitTheme?.loadingIndicatorSize.height ?? defaultSize.height,
+        width: size?.width ??
+            fitTheme?.loadingIndicatorSize.width ??
+            defaultSize.width,
+        height: size?.height ??
+            fitTheme?.loadingIndicatorSize.height ??
+            defaultSize.height,
         child: const CircularProgressIndicator(),
       ),
     );

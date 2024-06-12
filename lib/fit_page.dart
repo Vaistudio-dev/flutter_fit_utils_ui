@@ -15,12 +15,8 @@ class FitPage extends StatelessWidget {
   /// [true] by default.
   final bool scrollable;
 
-  const FitPage({
-    super.key,
-    this.appBar,
-    required this.children,
-    this.scrollable = true
-  });
+  const FitPage(
+      {super.key, this.appBar, required this.children, this.scrollable = true});
 
   @override
   Widget build(BuildContext context) {

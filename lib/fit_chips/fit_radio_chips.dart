@@ -56,7 +56,7 @@ class _FitRadioChipsState extends State<FitRadioChips> {
                     onTap: () {
                       setState(() {
                         selectedIndex = i;
-                  
+
                         if (widget.onSelectionChanged != null) {
                           widget.onSelectionChanged!(i);
                         }

@@ -66,10 +66,13 @@ class FitMenu extends StatelessWidget {
       height: height,
       decoration: BoxDecoration(
         color: Theme.of(context).colorScheme.secondary,
-        borderRadius: FitTheme.of(context)?.baseRadius.copyWith(bottomRight: const Radius.circular(0), bottomLeft: const Radius.circular(0)),
+        borderRadius: FitTheme.of(context)?.baseRadius.copyWith(
+            bottomRight: const Radius.circular(0),
+            bottomLeft: const Radius.circular(0)),
       ),
       child: Container(
-        padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
+        padding:
+            EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
         child: SingleChildScrollView(
           child: Column(
             children: [
@@ -86,15 +89,22 @@ class FitMenu extends StatelessWidget {
                 ),
               ),
               ListTile(
-                leading: mainIcon != null ? Icon(mainIcon!, color: Theme.of(context).colorScheme.onSecondary) : iconWidget,
+                leading: mainIcon != null
+                    ? Icon(mainIcon!,
+                        color: Theme.of(context).colorScheme.onSecondary)
+                    : iconWidget,
                 title: FitText.title(
                   title,
-                  style: TextStyle(color: Theme.of(context).colorScheme.onSecondary),
+                  style: TextStyle(
+                      color: Theme.of(context).colorScheme.onSecondary),
                 ),
-                subtitle: subTitle != null ? FitText.body(
-                  subTitle!,
-                  style: TextStyle(color: Theme.of(context).colorScheme.onSecondary),
-                ) : null,
+                subtitle: subTitle != null
+                    ? FitText.body(
+                        subTitle!,
+                        style: TextStyle(
+                            color: Theme.of(context).colorScheme.onSecondary),
+                      )
+                    : null,
               ),
               const Divider(
                 thickness: 0.25,
@@ -113,10 +123,12 @@ class FitMenu extends StatelessWidget {
 
                       item.onTap(context, tappedItem);
                     },
-                    leading: Icon(item.icon, color: Theme.of(context).colorScheme.onSecondary),
+                    leading: Icon(item.icon,
+                        color: Theme.of(context).colorScheme.onSecondary),
                     title: FitText.title(
                       item.title,
-                      style: TextStyle(color: Theme.of(context).colorScheme.onSecondary),
+                      style: TextStyle(
+                          color: Theme.of(context).colorScheme.onSecondary),
                     ),
                   ),
             ],

@@ -15,7 +15,11 @@ class SettingSection extends StatelessWidget {
   final SettingSpacer topSpacer;
 
   /// Creates a new [FitSettingSection].
-  const SettingSection({super.key, this.title, this.topSpacer = const SettingSpacer(), required this.children});
+  const SettingSection(
+      {super.key,
+      this.title,
+      this.topSpacer = const SettingSpacer(),
+      required this.children});
 
   @override
   Widget build(BuildContext context) {
@@ -23,10 +27,8 @@ class SettingSection extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         topSpacer,
-        if (title != null)
-          FitText.title(title!),
-        for (final child in children)
-          child,
+        if (title != null) FitText.title(title!),
+        for (final child in children) child,
       ],
     );
   }

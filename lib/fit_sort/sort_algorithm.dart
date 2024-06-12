@@ -16,7 +16,8 @@ final class AToZSort implements SortAlgorithm {
   @override
   List<Sortable> sort(List<Sortable> data) {
     final copy = List<Sortable>.from(data);
-    copy.sort((a, b) => a.getComparator().toString().compareTo(b.getComparator().toString()));
+    copy.sort((a, b) =>
+        a.getComparator().toString().compareTo(b.getComparator().toString()));
     return copy;
   }
 }
@@ -29,7 +30,8 @@ final class ZToASort implements SortAlgorithm {
   @override
   List<Sortable> sort(List<Sortable> data) {
     final copy = List<Sortable>.from(data);
-    copy.sort((a, b) => b.getComparator().toString().compareTo(a.getComparator().toString()));
+    copy.sort((a, b) =>
+        b.getComparator().toString().compareTo(a.getComparator().toString()));
     return copy;
   }
 }

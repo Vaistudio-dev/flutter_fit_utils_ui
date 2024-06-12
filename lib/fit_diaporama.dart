@@ -12,6 +12,7 @@ class FitDiaporama extends StatefulWidget {
 
   /// Animation duration between images.
   final Duration animationDuration;
+
   /// Duration of a single image.
   final Duration imageDuration;
 

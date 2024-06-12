@@ -17,7 +17,7 @@ class FitSettingsCruncher extends StatelessWidget {
 
   /// Widgets to potentially crunch.
   final List<Widget> children;
-  
+
   /// Creates a new [FitSettingsCruncher].
   const FitSettingsCruncher({
     super.key,
@@ -60,8 +60,7 @@ class FitSettingsCruncher extends StatelessWidget {
         );
       },
       title: FitText.body(crunchText),
-      subtitle: crunchSubtitle != null ?
-        FitText.body(crunchSubtitle!) : null,
+      subtitle: crunchSubtitle != null ? FitText.body(crunchSubtitle!) : null,
       trailing: const Icon(Icons.arrow_forward_ios, size: 16),
     );
   }

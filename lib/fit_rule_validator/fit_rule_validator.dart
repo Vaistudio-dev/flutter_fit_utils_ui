@@ -25,7 +25,9 @@ class FitRuleValidator extends StatelessWidget {
                   height: 10,
                   margin: const EdgeInsets.only(right: 12),
                   decoration: BoxDecoration(
-                    color: rule.value ? Theme.of(context).colorScheme.primary : Theme.of(context).colorScheme.error,
+                    color: rule.value
+                        ? Theme.of(context).colorScheme.primary
+                        : Theme.of(context).colorScheme.error,
                     shape: BoxShape.circle,
                   ),
                 ),

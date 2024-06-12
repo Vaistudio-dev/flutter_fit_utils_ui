@@ -7,13 +7,13 @@ import 'package:flutter_fit_utils_ui/fit_theme.dart';
 /// Body: based on TextTheme.bodyLarge.
 /// Button: based on TextTheme.bodyLarge.
 /// hint: based on TextTheme.labelSmall.
-/// 
+///
 /// The text style is also based on FitTheme.baseTextStyle.
 /// Here is the order for merging the 3 styles together:
 /// 1. Role style (headline, title, etc.)
 /// 2. Base style (from FitTheme)
 /// 3. Custom stlye ([FitText.style])
-/// 
+///
 /// [FiText] may also automatically wrap the [Text] widget inside a [Container],
 /// if necessary. To be wrapped in a [Container], at least one of the following
 /// properties needs to be non null:

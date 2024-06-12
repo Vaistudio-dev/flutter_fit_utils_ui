@@ -14,6 +14,7 @@ class FitSelectableCard extends StatelessWidget {
 
   /// Title of the card.
   final String title;
+
   /// Description dof the card.
   final String description;
 
@@ -28,7 +29,8 @@ class FitSelectableCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final FitTheme fitTheme = FitTheme.of(context) ?? const FitTheme(child: SizedBox());
+    final FitTheme fitTheme =
+        FitTheme.of(context) ?? const FitTheme(child: SizedBox());
     final ThemeData appTheme = Theme.of(context);
 
     return GestureDetector(
@@ -40,7 +42,9 @@ class FitSelectableCard extends StatelessWidget {
           color: Colors.transparent,
           borderRadius: fitTheme.baseRadius,
           border: Border.all(
-            color: selected ? appTheme.colorScheme.primary : appTheme.colorScheme.secondary,
+            color: selected
+                ? appTheme.colorScheme.primary
+                : appTheme.colorScheme.secondary,
             width: 3,
           ),
         ),
@@ -56,10 +60,15 @@ class FitSelectableCard extends StatelessWidget {
                     height: 20,
                     margin: const EdgeInsets.only(right: 8),
                     decoration: BoxDecoration(
-                      color: selected ? appTheme.colorScheme.primary : appTheme.colorScheme.secondary,
+                      color: selected
+                          ? appTheme.colorScheme.primary
+                          : appTheme.colorScheme.secondary,
                       shape: BoxShape.circle,
                     ),
-                    child: selected ? Icon(Icons.check, size: 16, color: appTheme.colorScheme.background) : null,
+                    child: selected
+                        ? Icon(Icons.check,
+                            size: 16, color: appTheme.colorScheme.background)
+                        : null,
                   ),
                   FitText.body(
                     title,

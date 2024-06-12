@@ -1,6 +1,4 @@
 import 'package:flutter/widgets.dart';
-import 'package:flutter_fit_utils_ui/fit_sort/sort_algorithm.dart';
-import 'package:flutter_fit_utils_ui/fit_sort/sortable.dart';
 
 import '../flutter_fit_utils_ui.dart';
 
@@ -14,7 +12,7 @@ class FitSort extends StatefulWidget {
 
   /// List of the available sorting algorithms.
   final List<SortAlgorithm> availableAlgorithms;
-  
+
   /// Execute when the selected sort algorithm changes.
   /// Pass the newly sorted data and the index of the newly selected algorithm.
   final void Function(List<Sortable>, int) onSortChanged;
@@ -55,8 +53,12 @@ class _FitSortState extends State<FitSort> {
     return FitRadioChips(
       title: widget.prompt,
       onSelectionChanged: (value) => setState(() {
-        selectedIndex = (selectedIndex + 1 >= widget.availableAlgorithms.length ? 0 : selectedIndex + 1);
-        widget.onSortChanged(widget.availableAlgorithms[selectedIndex].sort(widget.data), selectedIndex);
+        selectedIndex = (selectedIndex + 1 >= widget.availableAlgorithms.length
+            ? 0
+            : selectedIndex + 1);
+        widget.onSortChanged(
+            widget.availableAlgorithms[selectedIndex].sort(widget.data),
+            selectedIndex);
       }),
       options: [widget.availableAlgorithms[selectedIndex].sortId.toString()],
     );

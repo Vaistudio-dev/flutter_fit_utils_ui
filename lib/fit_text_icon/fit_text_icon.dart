@@ -16,12 +16,15 @@ class FitTextIcon extends StatelessWidget {
   final Icon icon;
 
   /// Creates a new [FitTextIcon].
-  const FitTextIcon({super.key, required this.text, required this.icon, this.themeData});
+  const FitTextIcon(
+      {super.key, required this.text, required this.icon, this.themeData});
 
   @override
   Widget build(BuildContext context) {
     final FitTheme? fitTheme = FitTheme.of(context);
-    final FitTextIconThemeData data = themeData ?? fitTheme?.fitTextIconThemeData ?? const FitTextIconThemeData();
+    final FitTextIconThemeData data = themeData ??
+        fitTheme?.fitTextIconThemeData ??
+        const FitTextIconThemeData();
 
     final List<Widget> widgets = [];
 
@@ -31,8 +34,7 @@ class FitTextIcon extends StatelessWidget {
         child: text,
       ));
       widgets.add(icon);
-    }
-    else {
+    } else {
       widgets.add(Container(
         padding: EdgeInsets.only(right: data.spacing),
         child: icon,

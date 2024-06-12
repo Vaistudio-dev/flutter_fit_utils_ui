@@ -9,6 +9,7 @@ class FitTextInput extends StatelessWidget {
 
   /// Field label.
   final String label;
+
   /// Field hint.
   final String hint;
 
@@ -171,32 +172,33 @@ class FitTextInput extends StatelessWidget {
     double? width,
     double? height,
     bool? readonly,
-  }) => FitTextInput(
-    label: label ?? this.label,
-    controller: controller ?? this.controller,
-    autofocus: autofocus ?? this.autofocus,
-    inputAction: inputAction ?? this.inputAction,
-    markAsRequired: markAsRequired ?? this.markAsRequired,
-    hint: hint ?? this.hint,
-    hideValue: hideValue ?? this.hideValue,
-    suffix: suffix ?? this.suffix,
-    focusNode: focusNode ?? this.focusNode,
-    validationMode: validationMode ?? this.validationMode,
-    keyboardType: keyboardType ?? this.keyboardType,
-    capitalization: capitalization ?? this.capitalization,
-    formatters: formatters ?? this.formatters,
-    validation: validation ?? this.validation,
-    onFieldSubmitted: onFieldSubmitted ?? this.onFieldSubmitted,
-    onChange: onChange ?? this.onChange,
-    margin: margin ?? this.margin,
-    padding: padding ?? this.padding,
-    maxLines: maxLines ?? this.maxLines,
-    minLines: minLines ?? this.minLines,
-    expand: expand ?? this.expand,
-    width: width ?? this.width,
-    height: height ?? this.height,
-    readonly: readonly ?? this.readonly,
-  );
+  }) =>
+      FitTextInput(
+        label: label ?? this.label,
+        controller: controller ?? this.controller,
+        autofocus: autofocus ?? this.autofocus,
+        inputAction: inputAction ?? this.inputAction,
+        markAsRequired: markAsRequired ?? this.markAsRequired,
+        hint: hint ?? this.hint,
+        hideValue: hideValue ?? this.hideValue,
+        suffix: suffix ?? this.suffix,
+        focusNode: focusNode ?? this.focusNode,
+        validationMode: validationMode ?? this.validationMode,
+        keyboardType: keyboardType ?? this.keyboardType,
+        capitalization: capitalization ?? this.capitalization,
+        formatters: formatters ?? this.formatters,
+        validation: validation ?? this.validation,
+        onFieldSubmitted: onFieldSubmitted ?? this.onFieldSubmitted,
+        onChange: onChange ?? this.onChange,
+        margin: margin ?? this.margin,
+        padding: padding ?? this.padding,
+        maxLines: maxLines ?? this.maxLines,
+        minLines: minLines ?? this.minLines,
+        expand: expand ?? this.expand,
+        width: width ?? this.width,
+        height: height ?? this.height,
+        readonly: readonly ?? this.readonly,
+      );
 
   @override
   Widget build(BuildContext context) {
@@ -212,7 +214,9 @@ class FitTextInput extends StatelessWidget {
       expands: expand,
       maxLines: maxLines,
       minLines: minLines,
-      keyboardType: Platform.isIOS && keyboardType == TextInputType.number ? TextInputType.text : keyboardType,
+      keyboardType: Platform.isIOS && keyboardType == TextInputType.number
+          ? TextInputType.text
+          : keyboardType,
       textCapitalization: capitalization,
       controller: controller,
       textInputAction: inputAction,
@@ -223,8 +227,7 @@ class FitTextInput extends StatelessWidget {
       autofocus: autofocus,
       obscureText: hideValue,
       inputFormatters: [
-        if (formatters != null)
-          ...formatters!,
+        if (formatters != null) ...formatters!,
         LengthLimitingTextInputFormatter(maxLength),
       ],
       validator: validation,
@@ -240,14 +243,14 @@ class FitTextInput extends StatelessWidget {
       ),
     );
 
-    return [width, height, margin, padding].any((element) => element != null) ?
-      Container(
-        width: width,
-        height: height,
-        margin: margin,
-        padding: padding,
-        child: fieldWidget,
-      ) :
-      fieldWidget;
+    return [width, height, margin, padding].any((element) => element != null)
+        ? Container(
+            width: width,
+            height: height,
+            margin: margin,
+            padding: padding,
+            child: fieldWidget,
+          )
+        : fieldWidget;
   }
 }

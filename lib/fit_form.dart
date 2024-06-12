@@ -10,6 +10,7 @@ import 'fit_theme.dart';
 class FitForm extends StatefulWidget {
   /// Liste des pages du formulaire.
   final List<Widget> pages;
+
   /// Callback lorsqu'on appuie sur le bouton de confirmation finale du formulaire.
   final Function() onEnd;
 
@@ -76,25 +77,30 @@ class _FitFormState extends State<FitForm> {
                                   child: page,
                                 ),
                                 if (activePage == widget.pages.length - 1)
-                                  Align( // Done button.
+                                  Align(
+                                    // Done button.
                                     child: Container(
                                       width: double.infinity,
-                                      margin: const EdgeInsets.only(right: 24, left: 24, bottom: 24),
+                                      margin: const EdgeInsets.only(
+                                          right: 24, left: 24, bottom: 24),
                                       child: FitButton(
                                         onTap: () {
                                           if (Form.of(context).validate()) {
                                             widget.onEnd();
                                           }
                                         },
-                                        child: FitText.button(widget.doneText ?? "Done"),
+                                        child: FitText.button(
+                                            widget.doneText ?? "Done"),
                                       ),
                                     ),
                                   )
                                 else
-                                  Align( // Next button.
+                                  Align(
+                                    // Next button.
                                     child: Container(
                                       width: double.infinity,
-                                      margin: const EdgeInsets.only(right: 24, left: 24, bottom: 24),
+                                      margin: const EdgeInsets.only(
+                                          right: 24, left: 24, bottom: 24),
                                       child: FitButton(
                                         onTap: () {
                                           if (Form.of(context).validate()) {
@@ -104,15 +110,18 @@ class _FitFormState extends State<FitForm> {
                                             );
                                           }
                                         },
-                                        child: FitText.button(widget.continueText ?? "Continue"),
+                                        child: FitText.button(
+                                            widget.continueText ?? "Continue"),
                                       ),
                                     ),
                                   ),
                                 if (activePage != 0)
-                                  Align( // Back button.
+                                  Align(
+                                    // Back button.
                                     child: Container(
                                       width: double.infinity,
-                                      margin: const EdgeInsets.only(right: 24, left: 24, bottom: 24),
+                                      margin: const EdgeInsets.only(
+                                          right: 24, left: 24, bottom: 24),
                                       child: FitButton(
                                         onTap: () {
                                           pageController.previousPage(
@@ -120,7 +129,8 @@ class _FitFormState extends State<FitForm> {
                                             curve: Curves.easeIn,
                                           );
                                         },
-                                        child: FitText.button(widget.backText ?? "Back"),
+                                        child: FitText.button(
+                                            widget.backText ?? "Back"),
                                       ),
                                     ),
                                   ),
@@ -131,13 +141,18 @@ class _FitFormState extends State<FitForm> {
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: List<Widget>.generate(widget.pages.length, (index) => Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 10),
-                        child: CircleAvatar(
-                          radius: 4,
-                          backgroundColor: activePage == index ? Theme.of(context).colorScheme.primary : Theme.of(context).colorScheme.secondary,
-                        ),
-                      )),
+                      children: List<Widget>.generate(
+                          widget.pages.length,
+                          (index) => Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 10),
+                                child: CircleAvatar(
+                                  radius: 4,
+                                  backgroundColor: activePage == index
+                                      ? Theme.of(context).colorScheme.primary
+                                      : Theme.of(context).colorScheme.secondary,
+                                ),
+                              )),
                     ),
                   ],
                 );
