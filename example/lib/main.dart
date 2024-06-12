@@ -280,6 +280,12 @@ class MyApp extends StatelessWidget {
                               FitSortExample(),
                             ],
                           ),
+                          const ExpansionTile(
+                            title: FitText.title("FitRuleValidator"),
+                            children: [
+                              FitRuleValidator(data: ExampleClass("")),
+                            ],
+                          )
                         ],
                       ),
                     ),
@@ -302,7 +308,7 @@ class FitSortExample extends StatefulWidget {
 }
 
 class _FitSortExampleState extends State<FitSortExample> {
-  List<Sortable> data = [
+  List<Sortable> data = const [
     ExampleClass("a"),
     ExampleClass("b"),
     ExampleClass("c"),
@@ -330,13 +336,20 @@ class _FitSortExampleState extends State<FitSortExample> {
   }
 }
 
-class ExampleClass implements Sortable {
+class ExampleClass with RuleValidator implements Sortable {
   final String data;
 
-  ExampleClass(this.data);
+  const ExampleClass(this.data);
 
   @override
   Object getComparator() => data;
+  
+  @override
+  Map<String, bool> validate() => {
+    "Completed Step 1": true,
+    "Completed Step 2": false,
+    "Completed Step 3": false,
+  };
 }
 
 class ExampleForm extends StatefulWidget {
