@@ -21,6 +21,7 @@ Available widgets:
 - FitRadioCards: Beautiful cards that you can use as radio buttons.
 - FitSwipeable: Make any widget swipeable easily, with not much code.
 - FitSettings: Create settings page easily.
+<img src="https://github.com/s0punk/flutter_fit_utils_ui/assets/59456672/441d2c7d-0248-4276-9267-5cc2ba136bc4" width="200"/>
 ![simulator_screenshot_34645CBD-8A43-4A24-81FE-20571CE1D0FC](https://github.com/s0punk/flutter_fit_utils_ui/assets/59456672/441d2c7d-0248-4276-9267-5cc2ba136bc4)![simulator_screenshot_5107CFB8-6DE9-4CB4-8438-8859750673EE](https://github.com/s0punk/flutter_fit_utils_ui/assets/59456672/7a6b7023-b6a6-453b-a5f1-65c03b7f1f72)
 - FitForm: Create forms with less code.
   ![simulator_screenshot_0FC425F7-D51D-4721-9857-7F54585EE98E](https://github.com/s0punk/flutter_fit_utils_ui/assets/59456672/62719e3d-acb0-49fb-8b93-3c8d7274ee3e)
