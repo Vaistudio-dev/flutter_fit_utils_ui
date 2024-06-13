@@ -24,8 +24,9 @@ Available widgets:
   
 <img src="https://github.com/s0punk/flutter_fit_utils_ui/assets/59456672/441d2c7d-0248-4276-9267-5cc2ba136bc4" width="200"/><img src="https://github.com/s0punk/flutter_fit_utils_ui/assets/59456672/7a6b7023-b6a6-453b-a5f1-65c03b7f1f72" width="200"/>
 - FitForm: Create forms with less code.
-  ![simulator_screenshot_0FC425F7-D51D-4721-9857-7F54585EE98E](https://github.com/s0punk/flutter_fit_utils_ui/assets/59456672/62719e3d-acb0-49fb-8b93-3c8d7274ee3e)
-![simulator_screenshot_5CE09357-1F15-4645-8903-177595D51B9C](https://github.com/s0punk/flutter_fit_utils_ui/assets/59456672/eadf541c-cf2c-40f4-8ee3-38bf3f070c9c)![simulator_screenshot_0DB722AE-F75C-4828-8F9C-59C3AC4A951F](https://github.com/s0punk/flutter_fit_utils_ui/assets/59456672/c90f666e-0580-4db3-8c89-df3f3bbf930d)
+
+<img src="https://github.com/s0punk/flutter_fit_utils_ui/assets/59456672/62719e3d-acb0-49fb-8b93-3c8d7274ee3e" width="200"/><img src="https://github.com/s0punk/flutter_fit_utils_ui/assets/59456672/eadf541c-cf2c-40f4-8ee3-38bf3f070c9c" width="200"/><img src="https://github.com/s0punk/flutter_fit_utils_ui/assets/59456672/c90f666e-0580-4db3-8c89-df3f3bbf930d" width="200"/>
+
 - FitMenu: Create beautiful drawer menus easily.
   ![simulator_screenshot_DD0F0B59-0A62-40A8-AF0D-ADAB7F3D4913](https://github.com/s0punk/flutter_fit_utils_ui/assets/59456672/393213c0-8925-4a68-a45d-5bdffa070aa4)
 
