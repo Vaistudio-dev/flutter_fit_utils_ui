@@ -21,8 +21,8 @@ Available widgets:
 - FitRadioCards: Beautiful cards that you can use as radio buttons.
 - FitSwipeable: Make any widget swipeable easily, with not much code.
 - FitSettings: Create settings page easily.
-  
-<img src="https://github.com/s0punk/flutter_fit_utils_ui/assets/59456672/441d2c7d-0248-4276-9267-5cc2ba136bc4" width="200"/><img src="https://github.com/s0punk/flutter_fit_utils_ui/assets/59456672/7a6b7023-b6a6-453b-a5f1-65c03b7f1f72" style="margin-left: 10px;" width="200"/>
+| | |
+| <img src="https://github.com/s0punk/flutter_fit_utils_ui/assets/59456672/441d2c7d-0248-4276-9267-5cc2ba136bc4" width="200"/> | <img src="https://github.com/s0punk/flutter_fit_utils_ui/assets/59456672/7a6b7023-b6a6-453b-a5f1-65c03b7f1f72" style="margin-left: 10px;" width="200"/> |
 - FitForm: Create forms with less code.
 
 <img src="https://github.com/s0punk/flutter_fit_utils_ui/assets/59456672/62719e3d-acb0-49fb-8b93-3c8d7274ee3e" width="200"/><img src="https://github.com/s0punk/flutter_fit_utils_ui/assets/59456672/eadf541c-cf2c-40f4-8ee3-38bf3f070c9c" width="200"/><img src="https://github.com/s0punk/flutter_fit_utils_ui/assets/59456672/c90f666e-0580-4db3-8c89-df3f3bbf930d" width="200"/>
