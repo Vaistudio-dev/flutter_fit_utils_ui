@@ -1,3 +1,21 @@
 ## 1.0.0
 
-
+- Added FitText
+- Added FitButton
+- Added FitDiaporama
+- Added FitForm
+- Added FitImageCard
+- Added FitLoadingIndicator
+- Added FitPage
+- Added FitTextInput
+- Added FitTheme
+- Added FitChip
+- Added FitRadioChips
+- Added FitLoadingHandler
+- Added FitMenu
+- Added FitRuleValidator
+- Added FitRadioCards
+- Added Settings widgets
+- Added FitSort
+- Added FitSwipeable
+- Added FitTextIcon
