@@ -22,8 +22,7 @@ Available widgets:
 - FitSwipeable: Make any widget swipeable easily, with not much code.
 - FitSettings: Create settings page easily.
 
-| a | b |
-| <img src="https://github.com/s0punk/flutter_fit_utils_ui/assets/59456672/441d2c7d-0248-4276-9267-5cc2ba136bc4" width="200"/> | <img src="https://github.com/s0punk/flutter_fit_utils_ui/assets/59456672/7a6b7023-b6a6-453b-a5f1-65c03b7f1f72" style="margin-left: 10px;" width="200"/> |
+<img src="https://github.com/s0punk/flutter_fit_utils_ui/assets/59456672/441d2c7d-0248-4276-9267-5cc2ba136bc4" width="200"/>  <img src="https://github.com/s0punk/flutter_fit_utils_ui/assets/59456672/7a6b7023-b6a6-453b-a5f1-65c03b7f1f72" style="margin-left: 10px;" width="200"/>
 
 
 - FitForm: Create forms with less code.
