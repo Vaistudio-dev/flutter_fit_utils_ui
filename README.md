@@ -49,12 +49,28 @@ flutter pub get
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+### The FitTheme Widget
+
+To have more control over the fit widgets, you can start be wrapping a ```dart FitTheme ``` around your widget tree.
+This class lets you change:
+- The base text style for all FitTexts
+- The size of loading indicators
+- The theme data of FitTextIcons
+- The loading behavior of FitLoadingHandlers
+- The basic page margin
+- The base radius
+
+These properties are all used by the different widgets offered by this package.
+
+### Other Widgets
+
+All widgets are simple to use, and only need a few lines of code to use theme. For example, this is how a FitText is called:
 
 ```dart
-const like = 'sample';
+FitText.headline("Your Headline Here")
 ```
+
+To learn more about the other widgets available, please checkout the example/main.dart file. This example covers all the available widgets.
 
 ## Additional information
 
