@@ -8,6 +8,9 @@ class FitPage extends StatelessWidget {
   /// Appbar of the page. Optionnal.
   final AppBar? appBar;
 
+  /// Floating action button of the page. Optionnal.
+  final Widget? floatingActionButton;
+
   /// Page content.
   final List<Widget> children;
 
@@ -16,7 +19,7 @@ class FitPage extends StatelessWidget {
   final bool scrollable;
 
   const FitPage(
-      {super.key, this.appBar, required this.children, this.scrollable = true});
+      {super.key, this.appBar, required this.children, this.scrollable = true, this.floatingActionButton});
 
   @override
   Widget build(BuildContext context) {
@@ -34,6 +37,7 @@ class FitPage extends StatelessWidget {
           ),
         ),
       ),
+      floatingActionButton: floatingActionButton,
     );
   }
 }
