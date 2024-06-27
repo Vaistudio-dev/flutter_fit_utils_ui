@@ -23,3 +23,7 @@
 ## 1.1.0
 
 - Add trailing and leading widget support for FitSettingItem
+
+## 1.1.1
+
+- Fixed danger setting item (Would not change color)

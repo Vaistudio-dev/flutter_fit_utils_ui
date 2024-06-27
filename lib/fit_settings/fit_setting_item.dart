@@ -45,6 +45,9 @@ class FitSettingItem extends StatelessWidget {
       onTap: onTap,
       title: FitText.body(
         title,
+        style: TextStyle(
+          color: danger ? Theme.of(context).colorScheme.error : null,
+        ),
       ),
       subtitle: subtitle != ""
           ? FitText.hint(
