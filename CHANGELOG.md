@@ -27,3 +27,7 @@
 ## 1.1.1
 
 - Fixed danger setting item (Would not change color)
+
+## 1.2.0
+
+- Added floating action button to FitPage
