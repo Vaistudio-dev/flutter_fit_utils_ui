@@ -20,6 +20,12 @@ class FitSettingItem extends StatelessWidget {
   /// Use for something like deleting an account, or before showing sensitive data.
   final bool locked;
 
+  /// Leading widget of the setting.
+  final Widget? leading;
+
+  /// Trailing widget of the setting.
+  final Widget? trailing;
+
   /// Creates a new [settingItem].
   const FitSettingItem(
       {super.key,
@@ -27,11 +33,15 @@ class FitSettingItem extends StatelessWidget {
       this.subtitle = "",
       this.onTap,
       this.danger = false,
-      this.locked = false});
+      this.locked = false,
+      this.leading,
+      this.trailing});
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
+      trailing: trailing,
+      leading: leading,
       onTap: onTap,
       title: FitText.body(
         title,
