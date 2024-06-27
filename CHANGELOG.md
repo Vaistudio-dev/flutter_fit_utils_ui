@@ -19,3 +19,7 @@
 - Added FitSort
 - Added FitSwipeable
 - Added FitTextIcon
+
+## 1.1.0
+
+- Add trailing and leading widget support for FitSettingItem
