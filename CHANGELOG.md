@@ -35,3 +35,7 @@
 ## 1.2.1
 
 - FitButtons now take their height from ButtonTheme.height
+
+## 1.2.2
+
+- Changed the base text style of FitText.button from bodyLarge to labelLarge
