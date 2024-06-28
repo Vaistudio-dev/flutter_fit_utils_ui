@@ -31,3 +31,7 @@
 ## 1.2.0
 
 - Added floating action button to FitPage
+
+## 1.2.1
+
+- FitButtons now take their height from ButtonTheme.height
