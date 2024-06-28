@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 /// Wrapper for [TextFormField].
+/// Uses bodyMedium to set the style of the value.
 class FitTextInput extends StatelessWidget {
   static const int _defaultMaxLength = 255;
 
@@ -233,9 +234,8 @@ class FitTextInput extends StatelessWidget {
       validator: validation,
       style: TextStyle(
         color: Theme.of(context).colorScheme.onBackground,
-        fontSize: 20,
         decoration: TextDecoration.none,
-      ),
+      ).merge(Theme.of(context).textTheme.bodyMedium),
       decoration: InputDecoration(
         labelText: inputLabel.toString(),
         hintText: hint,

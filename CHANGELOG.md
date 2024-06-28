@@ -39,3 +39,7 @@
 ## 1.2.2
 
 - Changed the base text style of FitText.button from bodyLarge to labelLarge
+
+## 1.2.3
+
+- FitTextInputs now use TextTheme.bodyMedium to set the style of it's value
