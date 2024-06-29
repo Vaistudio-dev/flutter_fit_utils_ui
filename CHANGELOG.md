@@ -43,3 +43,7 @@
 ## 1.2.3
 
 - FitTextInputs now use TextTheme.bodyMedium to set the style of it's value
+
+## 1.2.4
+
+- Added leading widget to FitSettingCruncher
