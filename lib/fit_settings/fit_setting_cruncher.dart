@@ -15,6 +15,9 @@ class FitSettingsCruncher extends StatelessWidget {
   /// Subtitle to display if the content is crunched.
   final String? crunchSubtitle;
 
+  /// Leading widget for the item.
+  final Widget? leading;
+
   /// Widgets to potentially crunch.
   final List<Widget> children;
 
@@ -25,6 +28,7 @@ class FitSettingsCruncher extends StatelessWidget {
     required this.crunchText,
     this.crunchSubtitle,
     required this.children,
+    this.leading,
   });
 
   @override
@@ -59,6 +63,7 @@ class FitSettingsCruncher extends StatelessWidget {
           ),
         );
       },
+      leading: leading,
       title: FitText.body(crunchText),
       subtitle: crunchSubtitle != null ? FitText.body(crunchSubtitle!) : null,
       trailing: const Icon(Icons.arrow_forward_ios, size: 16),
