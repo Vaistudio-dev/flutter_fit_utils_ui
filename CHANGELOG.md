@@ -47,3 +47,7 @@
 ## 1.2.4
 
 - Added leading widget to FitSettingCruncher
+
+## 1.2.5
+
+- Added a refresh indicator to FitPage
