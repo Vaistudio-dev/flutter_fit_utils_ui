@@ -394,6 +394,9 @@ class ExampleSettings extends StatelessWidget {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: const FitText("Example Settings"),
       ),
+      onRefresh: () async {
+        context.showSnackbar("Refreshing...");
+      },
       children: const [
         SettingSection(
           title: "Section #1",
