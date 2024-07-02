@@ -34,13 +34,14 @@ Available widgets:
 
 - FitSort: Sort a collection with prebuilt and customizable sort algorithms.
 - FitRuleValidator: Visualize how many steps/rule have been completed/respected.
+- FitDialog: Easily show dialogs with FitDialog.show().
 
 ## Getting started
 
 - Go inside your pubspec.yaml file
 - Add this line under the dependencies:
 ```
-flutter_fit_utils_ui: ^1.0.0
+flutter_fit_utils_ui: ^1.2.6
 ```
 - Get dependencies
 ```

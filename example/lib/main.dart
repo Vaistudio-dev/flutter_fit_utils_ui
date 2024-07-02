@@ -292,6 +292,24 @@ class MyApp extends StatelessWidget {
                         children: [
                           FitRuleValidator(data: ExampleClass("")),
                         ],
+                      ),
+                      ExpansionTile(
+                        title: const FitText.title("FitDialog"),
+                        children: [
+                          FitButton(
+                            onTap: () {
+                              FitDialog(
+                                onConfirm: () => Navigator.of(context).pop(),
+                                child: const Column(
+                                  children: [
+                                    FitText("Welcome to a FitDialog!")
+                                  ],
+                                ),
+                              ).show(context);
+                            },
+                            child: const FitText.button("Show Dialog"),
+                          ),
+                        ],
                       )
                     ],
                   ),
