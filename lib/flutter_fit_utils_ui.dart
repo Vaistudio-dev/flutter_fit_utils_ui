@@ -31,3 +31,4 @@ export 'fit_sort/sort_algorithm.dart';
 export 'fit_sort/sortable.dart';
 export 'fit_rule_validator/fit_rule_validator.dart';
 export 'fit_rule_validator/validator.dart';
+export 'fit_dialog.dart';

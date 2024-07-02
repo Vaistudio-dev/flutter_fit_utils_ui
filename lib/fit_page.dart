@@ -21,36 +21,43 @@ class FitPage extends StatelessWidget {
   final Future<void> Function()? onRefresh;
 
   const FitPage(
-      {super.key, this.appBar, required this.children, this.scrollable = true, this.floatingActionButton, this.onRefresh});
+      {super.key,
+      this.appBar,
+      required this.children,
+      this.scrollable = true,
+      this.floatingActionButton,
+      this.onRefresh});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: appBar,
       body: SafeArea(
-        child: Builder(
-          builder: (context) {
-            final child = SingleChildScrollView(
-              physics: !scrollable ? const NeverScrollableScrollPhysics() : onRefresh != null ? const AlwaysScrollableScrollPhysics() : null,
-              child: Container(
-                margin: FitTheme.of(context)?.pageMargin,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: children,
-                ),
+        child: Builder(builder: (context) {
+          final child = SingleChildScrollView(
+            physics: !scrollable
+                ? const NeverScrollableScrollPhysics()
+                : onRefresh != null
+                    ? const AlwaysScrollableScrollPhysics()
+                    : null,
+            child: Container(
+              margin: FitTheme.of(context)?.pageMargin,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: children,
               ),
+            ),
+          );
+
+          if (onRefresh != null) {
+            return RefreshIndicator(
+              onRefresh: onRefresh!,
+              child: child,
             );
-
-            if (onRefresh != null) {
-              return RefreshIndicator(
-                onRefresh: onRefresh!,
-                child: child,
-              );
-            }
-
-            return child;
           }
-        ),
+
+          return child;
+        }),
       ),
       floatingActionButton: floatingActionButton,
     );

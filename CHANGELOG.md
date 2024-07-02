@@ -51,3 +51,8 @@
 ## 1.2.5
 
 - Added a refresh indicator to FitPage
+
+## 1.2.6
+
+- Added FitDialog
+- Updated README
