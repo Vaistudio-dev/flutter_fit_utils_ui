@@ -68,6 +68,7 @@ class _FitDialogState extends State<FitDialog> {
               if (widget.onConfirm != null)
                 FitButton(
                   onTap: widget.onConfirm!,
+                  width: double.infinity,
                   child: FitText.button(widget.confirmLabel),
                 ),
             ],

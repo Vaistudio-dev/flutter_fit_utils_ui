@@ -56,3 +56,7 @@
 
 - Added FitDialog
 - Updated README
+
+## 1.2.7
+
+- Fixed the width of the confirmation button of FitDialogs
