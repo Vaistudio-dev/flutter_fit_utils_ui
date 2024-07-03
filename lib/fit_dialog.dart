@@ -33,8 +33,9 @@ class FitDialog extends StatefulWidget {
   @override
   State<FitDialog> createState() => _FitDialogState();
 
-  void show(BuildContext context) {
-    showBottomSheet(
+  /// Calls [showModalBottomSheet].
+  Future<dynamic> show(BuildContext context) {
+    return showModalBottomSheet(
       context: context,
       builder: (context) => this,
     );
