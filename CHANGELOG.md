@@ -60,3 +60,7 @@
 ## 1.2.7
 
 - Fixed the width of the confirmation button of FitDialogs
+
+## 1.2.8
+
+- Added return to FitDialog.show()
