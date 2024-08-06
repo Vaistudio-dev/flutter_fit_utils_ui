@@ -18,6 +18,7 @@ class FitPage extends StatelessWidget {
   /// [true] by default.
   final bool scrollable;
 
+  /// If set, the content will be wrapped with a [RefreshIndicator].
   final Future<void> Function()? onRefresh;
 
   const FitPage(
@@ -33,7 +34,7 @@ class FitPage extends StatelessWidget {
     return Scaffold(
       appBar: appBar,
       body: SafeArea(
-        child: Builder(builder: (context) {
+        child: LayoutBuilder(builder: (context, constraints) {
           final child = SingleChildScrollView(
             physics: !scrollable
                 ? const NeverScrollableScrollPhysics()
@@ -41,10 +42,15 @@ class FitPage extends StatelessWidget {
                     ? const AlwaysScrollableScrollPhysics()
                     : null,
             child: Container(
+              height: constraints.maxHeight,
               margin: FitTheme.of(context)?.pageMargin,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: children,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  ...children,
+                  const Spacer(),
+                ],
               ),
             ),
           );
