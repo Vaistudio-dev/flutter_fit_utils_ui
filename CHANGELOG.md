@@ -64,3 +64,7 @@
 ## 1.2.8
 
 - Added return to FitDialog.show()
+
+## 1.2.9
+
+- Fix FitPage layout
