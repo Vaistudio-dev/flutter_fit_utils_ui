@@ -72,3 +72,7 @@
 ## 1.3.0
 
 - Added crossAxisAlignment and mainAxisAlignment parameters to FitPage.
+
+## 1.3.1
+
+- Fixed FitPage alignment.
