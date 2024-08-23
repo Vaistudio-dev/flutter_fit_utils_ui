@@ -18,6 +18,9 @@ class FitPage extends StatelessWidget {
   /// [true] by default.
   final bool scrollable;
 
+  /// Alignment for the page content.
+  final Alignment? alignment;
+
   /// Cross axis alignment for the page content.
   final CrossAxisAlignment crossAxisAlignment;
 
@@ -35,7 +38,8 @@ class FitPage extends StatelessWidget {
       this.floatingActionButton,
       this.onRefresh,
       this.crossAxisAlignment = CrossAxisAlignment.start,
-      this.mainAxisAlignment = MainAxisAlignment.start});
+      this.mainAxisAlignment = MainAxisAlignment.start,
+      this.alignment});
 
   @override
   Widget build(BuildContext context) {
@@ -52,6 +56,7 @@ class FitPage extends StatelessWidget {
             child: Container(
               height: constraints.maxHeight,
               margin: FitTheme.of(context)?.pageMargin,
+              alignment: alignment,
               child: Column(
                 crossAxisAlignment: crossAxisAlignment,
                 mainAxisAlignment: mainAxisAlignment,
