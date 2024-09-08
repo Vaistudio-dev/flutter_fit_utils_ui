@@ -43,43 +43,31 @@ class FitPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    final base = Scaffold(
       appBar: appBar,
       body: SafeArea(
-        child: LayoutBuilder(builder: (context, constraints) {
-          final child = SingleChildScrollView(
-            physics: !scrollable
-                ? const NeverScrollableScrollPhysics()
-                : onRefresh != null
-                    ? const AlwaysScrollableScrollPhysics()
-                    : null,
-            child: Container(
-              height: constraints.maxHeight,
-              margin: FitTheme.of(context)?.pageMargin,
-              alignment: alignment,
-              child: Column(
-                crossAxisAlignment: crossAxisAlignment,
-                mainAxisAlignment: mainAxisAlignment,
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  ...children,
-                  const Spacer(),
-                ],
-              ),
+        child: Container(
+          alignment: alignment,
+          margin: FitTheme.of(context)?.pageMargin,
+          child: SingleChildScrollView(
+            physics: !scrollable && onRefresh == null ? const NeverScrollableScrollPhysics() : null,
+            child: Column(
+              mainAxisAlignment: mainAxisAlignment,
+              crossAxisAlignment: crossAxisAlignment,
+              children: children,
             ),
-          );
-
-          if (onRefresh != null) {
-            return RefreshIndicator(
-              onRefresh: onRefresh!,
-              child: child,
-            );
-          }
-
-          return child;
-        }),
+          ),
+        ),
       ),
-      floatingActionButton: floatingActionButton,
     );
+
+    if (onRefresh != null) {
+      return RefreshIndicator(
+        onRefresh: onRefresh!,
+        child: base,
+      );
+    }
+
+    return base;
   }
 }

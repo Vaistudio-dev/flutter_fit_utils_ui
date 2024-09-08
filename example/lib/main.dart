@@ -416,6 +416,7 @@ class ExampleSettings extends StatelessWidget {
       onRefresh: () async {
         context.showSnackbar("Refreshing...");
       },
+      scrollable: false,
       children: const [
         SettingSection(
           title: "Section #1",
@@ -445,6 +446,54 @@ class ExampleSettings extends StatelessWidget {
                     FitSettingItem(title: "Name", subtitle: "John Doe"),
                     FitSettingItem(
                         title: "Address", subtitle: "Place 123 drive"),
+                    FitSettingItem(title: "Name", subtitle: "John Doe"),
+                  ],
+                ),
+              ],
+            ),
+            SettingSection(
+              title: "Section #1",
+              children: [
+                FitSettingItem(title: "Name", subtitle: "John Doe"),
+                FitSettingItem(title: "Address", subtitle: "Place 123 drive"),
+                FitSettingItem(title: "Name", subtitle: "John Doe"),
+                FitSettingsCruncher(
+                  crunchText: "Info",
+                  children: [
+                    FitSettingItem(title: "Name", subtitle: "John Doe"),
+                    FitSettingItem(title: "Address", subtitle: "Place 123 drive"),
+                    FitSettingItem(title: "Name", subtitle: "John Doe"),
+                  ],
+                ),
+              ],
+            ),
+            SettingSection(
+              title: "Section #1",
+              children: [
+                FitSettingItem(title: "Name", subtitle: "John Doe"),
+                FitSettingItem(title: "Address", subtitle: "Place 123 drive"),
+                FitSettingItem(title: "Name", subtitle: "John Doe"),
+                FitSettingsCruncher(
+                  crunchText: "Info",
+                  children: [
+                    FitSettingItem(title: "Name", subtitle: "John Doe"),
+                    FitSettingItem(title: "Address", subtitle: "Place 123 drive"),
+                    FitSettingItem(title: "Name", subtitle: "John Doe"),
+                  ],
+                ),
+              ],
+            ),
+            SettingSection(
+              title: "Section #1",
+              children: [
+                FitSettingItem(title: "Name", subtitle: "John Doe"),
+                FitSettingItem(title: "Address", subtitle: "Place 123 drive"),
+                FitSettingItem(title: "Name", subtitle: "John Doe"),
+                FitSettingsCruncher(
+                  crunchText: "Info",
+                  children: [
+                    FitSettingItem(title: "Name", subtitle: "John Doe"),
+                    FitSettingItem(title: "Address", subtitle: "Place 123 drive"),
                     FitSettingItem(title: "Name", subtitle: "John Doe"),
                   ],
                 ),

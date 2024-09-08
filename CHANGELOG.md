@@ -76,3 +76,7 @@
 ## 1.3.1
 
 - Fixed FitPage alignment.
+
+## 1.3.2
+
+- Fixed FitPage scrolling.
