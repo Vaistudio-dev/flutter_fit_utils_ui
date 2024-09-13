@@ -80,3 +80,7 @@
 ## 1.3.2
 
 - Fixed FitPage scrolling.
+
+### 1.3.3
+
+- Fixed FitPage not showing FABs.
