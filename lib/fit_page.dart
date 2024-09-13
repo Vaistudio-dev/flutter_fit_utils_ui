@@ -59,6 +59,7 @@ class FitPage extends StatelessWidget {
           ),
         ),
       ),
+      floatingActionButton: floatingActionButton,
     );
 
     if (onRefresh != null) {
