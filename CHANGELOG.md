@@ -81,6 +81,10 @@
 
 - Fixed FitPage scrolling.
 
-### 1.3.3
+## 1.3.3
 
 - Fixed FitPage not showing FABs.
+
+## 1.4.0
+
+- Added textColor option to FitImageCard.
