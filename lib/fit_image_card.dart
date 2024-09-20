@@ -22,6 +22,10 @@ class FitImageCard extends StatelessWidget {
   /// Subtitle of the card.
   final String? description;
 
+  /// Color to use for the title and description.
+  /// Defaults to ColorScheme.onPrimary.
+  final Color? textColor;
+
   /// Creates a new [FitImageCard].
   const FitImageCard({
     super.key,
@@ -30,6 +34,7 @@ class FitImageCard extends StatelessWidget {
     this.title,
     this.description,
     this.height = 250,
+    this.textColor,
   });
 
   @override
@@ -97,14 +102,14 @@ class FitImageCard extends StatelessWidget {
                       FitText.title(
                         title!,
                         style: TextStyle(
-                          color: Theme.of(context).colorScheme.onPrimary,
+                          color: textColor ?? Theme.of(context).colorScheme.onPrimary,
                         ),
                       ),
                     if (description != null)
                       FitText.body(
                         description!,
                         style: TextStyle(
-                          color: Theme.of(context).colorScheme.onPrimary,
+                          color: textColor ?? Theme.of(context).colorScheme.onPrimary,
                         ),
                       ),
                   ],
