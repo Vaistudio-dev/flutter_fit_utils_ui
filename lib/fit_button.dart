@@ -22,6 +22,9 @@ class FitButton extends StatelessWidget {
   /// Padding of the button.
   final EdgeInsets? padding;
 
+  /// Background color of the button.
+  final Color? color;
+
   /// Widget to display inside the button.
   final Widget child;
 
@@ -35,22 +38,21 @@ class FitButton extends StatelessWidget {
     this.padding,
     this.width,
     this.height,
+    this.color,
   });
 
   @override
   Widget build(BuildContext context) {
     final FitTheme? fitTheme = FitTheme.of(context);
 
-    ButtonStyle? style;
-    if (fitTheme != null) {
-      style = ButtonStyle(
-        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-          RoundedRectangleBorder(
-            borderRadius: fitTheme.baseRadius,
-          ),
+    ButtonStyle style = ButtonStyle(
+      shape: fitTheme != null ? MaterialStateProperty.all<RoundedRectangleBorder>(
+        RoundedRectangleBorder(
+          borderRadius: fitTheme.baseRadius,
         ),
-      );
-    }
+      ) : null,
+      backgroundColor: color != null ? MaterialStateProperty.all<Color>(color!) : null,
+    );
 
     return Container(
       width: width,

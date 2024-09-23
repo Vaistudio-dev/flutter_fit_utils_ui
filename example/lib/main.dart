@@ -138,6 +138,11 @@ class MyApp extends StatelessWidget {
                           ),
                           FitButton(
                             onTap: () {},
+                            color: Theme.of(context).colorScheme.error,
+                            child: const FitText.button("Save"),
+                          ),
+                          FitButton(
+                            onTap: () {},
                             child: const Icon(Icons.save),
                           ),
                         ],
