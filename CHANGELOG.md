@@ -88,3 +88,7 @@
 ## 1.4.0
 
 - Added textColor option to FitImageCard.
+
+## 1.5.0
+
+- Added possibility to change the background color of FitButton.
