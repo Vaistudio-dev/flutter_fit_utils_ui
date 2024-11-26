@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_fit_utils_ui/flutter_fit_utils_ui.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -421,7 +420,7 @@ class ExampleSettings extends StatelessWidget {
       onRefresh: () async {
         context.showSnackbar("Refreshing...");
       },
-      scrollable: false,
+      scrollPhysics: const NeverScrollableScrollPhysics(),
       children: const [
         SettingSection(
           title: "Section #1",

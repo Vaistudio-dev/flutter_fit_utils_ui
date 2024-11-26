@@ -14,9 +14,8 @@ class FitPage extends StatelessWidget {
   /// Page content.
   final List<Widget> children;
 
-  /// Set to [false] if you don't want your page content to be scrollable.
-  /// [true] by default.
-  final bool scrollable;
+  /// Scroll physics for the page.
+  final ScrollPhysics? scrollPhysics;
 
   /// Alignment for the page content.
   final Alignment? alignment;
@@ -34,7 +33,7 @@ class FitPage extends StatelessWidget {
       {super.key,
       this.appBar,
       required this.children,
-      this.scrollable = true,
+      this.scrollPhysics,
       this.floatingActionButton,
       this.onRefresh,
       this.crossAxisAlignment = CrossAxisAlignment.start,
@@ -50,7 +49,7 @@ class FitPage extends StatelessWidget {
           alignment: alignment,
           margin: FitTheme.of(context)?.pageMargin,
           child: SingleChildScrollView(
-            physics: !scrollable && onRefresh == null ? const NeverScrollableScrollPhysics() : null,
+            physics: scrollPhysics,
             child: Column(
               mainAxisAlignment: mainAxisAlignment,
               crossAxisAlignment: crossAxisAlignment,
