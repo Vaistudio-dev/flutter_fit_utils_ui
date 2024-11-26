@@ -92,3 +92,7 @@
 ## 1.5.0
 
 - Added possibility to change the background color of FitButton.
+
+## 1.6.0
+
+- Updated FitPage's scroll parameters
