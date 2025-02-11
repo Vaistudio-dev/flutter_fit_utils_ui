@@ -19,6 +19,10 @@ class FitTheme extends InheritedWidget {
   /// You can override the theme data for individual [FitTextIcon] if needed.
   final FitTextIconThemeData fitTextIconThemeData;
 
+  /// Theming properties for [FitMenu].
+  /// You can override the theme data for individual [FitMenu] if needed.
+  final FitMenuThemeData fitMenuThemeData;
+
   /// Behavior for all [FitLoadingHandler].
   final FitLoadingHandlerBehavior loadingBehavior;
 
@@ -40,6 +44,7 @@ class FitTheme extends InheritedWidget {
     this.pageMargin,
     this.loadingIndicatorSize = FitLoadingIndicator.defaultSize,
     this.fitTextIconThemeData = const FitTextIconThemeData(),
+    this.fitMenuThemeData = const FitMenuThemeData(),
     this.loadingBehavior = const FitLoadingHandlerBehavior(),
     this.baseRadius =
         const BorderRadius.all(Radius.circular(defaultBaseRadius)),

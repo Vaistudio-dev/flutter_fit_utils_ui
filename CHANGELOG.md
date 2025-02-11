@@ -95,4 +95,8 @@
 
 ## 1.6.0
 
-- Updated FitPage's scroll parameters
+- Updated FitPage's scroll parameters.
+
+## 1.7.0
+
+- Added FitMenuThemeData.
