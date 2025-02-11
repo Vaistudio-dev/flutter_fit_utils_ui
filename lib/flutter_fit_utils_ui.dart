@@ -32,3 +32,4 @@ export 'fit_sort/sortable.dart';
 export 'fit_rule_validator/fit_rule_validator.dart';
 export 'fit_rule_validator/validator.dart';
 export 'fit_dialog.dart';
+export 'fit_menu/fit_menu_theme_data.dart';

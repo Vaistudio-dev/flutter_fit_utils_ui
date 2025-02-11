@@ -46,6 +46,9 @@ class FitMenu extends StatelessWidget {
   /// Default: 470 px.
   final double height;
 
+  /// Theming properties of the menu;
+  final FitMenuThemeData? theme;
+
   /// Creates a new [FitMenu].
   const FitMenu({
     super.key,
@@ -58,14 +61,24 @@ class FitMenu extends StatelessWidget {
     this.onItemTap,
     required this.menuItems,
     this.popOnTap = true,
+    this.theme,
   });
 
   @override
   Widget build(BuildContext context) {
+    final fitTheme = FitTheme.of(context);
+    final globalTheme = Theme.of(context);
+
+    final textColor = theme?.textColor ?? fitTheme?.fitMenuThemeData.textColor ?? globalTheme.colorScheme.onSecondary;
+    final iconColor = theme?.iconColor ?? fitTheme?.fitMenuThemeData.iconColor ?? globalTheme.colorScheme.onSecondary;
+    final handleColor = theme?.handleColor ?? fitTheme?.fitMenuThemeData.handleColor ?? globalTheme.colorScheme.onPrimary;
+    final backgroundColor = theme?.backgroundColor ?? fitTheme?.fitMenuThemeData.backgroundColor ?? globalTheme.colorScheme.secondary;
+    final dividerThickness = theme?.dividerThickness ?? fitTheme?.fitMenuThemeData.dividerThickness ?? 0.25;
+
     return Container(
       height: height,
       decoration: BoxDecoration(
-        color: Theme.of(context).colorScheme.secondary,
+        color: backgroundColor,
         borderRadius: FitTheme.of(context)?.baseRadius.copyWith(
             bottomRight: const Radius.circular(0),
             bottomLeft: const Radius.circular(0)),
@@ -83,7 +96,7 @@ class FitMenu extends StatelessWidget {
                   width: 32,
                   margin: const EdgeInsets.only(bottom: 12),
                   decoration: BoxDecoration(
-                    color: Theme.of(context).colorScheme.onPrimary,
+                    color: handleColor,
                     borderRadius: const BorderRadius.all(Radius.circular(100)),
                   ),
                 ),
@@ -91,23 +104,23 @@ class FitMenu extends StatelessWidget {
               ListTile(
                 leading: mainIcon != null
                     ? Icon(mainIcon!,
-                        color: Theme.of(context).colorScheme.onSecondary)
+                        color: iconColor)
                     : iconWidget,
                 title: FitText.title(
                   title,
                   style: TextStyle(
-                      color: Theme.of(context).colorScheme.onSecondary),
+                      color: textColor),
                 ),
                 subtitle: subTitle != null
                     ? FitText.body(
                         subTitle!,
                         style: TextStyle(
-                            color: Theme.of(context).colorScheme.onSecondary),
+                            color: textColor),
                       )
                     : null,
               ),
-              const Divider(
-                thickness: 0.25,
+              Divider(
+                thickness: dividerThickness,
               ),
               for (final item in menuItems)
                 if (item.show(context, tappedItem))
@@ -124,11 +137,11 @@ class FitMenu extends StatelessWidget {
                       item.onTap(context, tappedItem);
                     },
                     leading: Icon(item.icon,
-                        color: Theme.of(context).colorScheme.onSecondary),
+                        color: iconColor),
                     title: FitText.title(
                       item.title,
                       style: TextStyle(
-                          color: Theme.of(context).colorScheme.onSecondary),
+                          color: textColor),
                     ),
                   ),
             ],
