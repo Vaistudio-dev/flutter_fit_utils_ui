@@ -11,6 +11,9 @@ class FitPage extends StatelessWidget {
   /// Floating action button of the page. Optionnal.
   final Widget? floatingActionButton;
 
+  /// Floating action button location.
+  final FloatingActionButtonLocation? floatingActionButtonLocation;
+
   /// Page content.
   final List<Widget> children;
 
@@ -35,6 +38,7 @@ class FitPage extends StatelessWidget {
       required this.children,
       this.scrollPhysics,
       this.floatingActionButton,
+      this.floatingActionButtonLocation,
       this.onRefresh,
       this.crossAxisAlignment = CrossAxisAlignment.start,
       this.mainAxisAlignment = MainAxisAlignment.start,
@@ -59,6 +63,7 @@ class FitPage extends StatelessWidget {
         ),
       ),
       floatingActionButton: floatingActionButton,
+      floatingActionButtonLocation: floatingActionButtonLocation,
     );
 
     if (onRefresh != null) {

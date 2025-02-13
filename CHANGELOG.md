@@ -100,3 +100,7 @@
 ## 1.7.0
 
 - Added FitMenuThemeData.
+
+## 1.7.1
+
+- Added a floating action button location parameter to FitPage.
