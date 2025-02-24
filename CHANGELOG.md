@@ -104,3 +104,7 @@
 ## 1.7.1
 
 - Added a floating action button location parameter to FitPage.
+
+## 1.7.2
+
+- Added disabled property to FitMenuItem.

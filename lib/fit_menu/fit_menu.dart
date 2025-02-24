@@ -74,6 +74,7 @@ class FitMenu extends StatelessWidget {
     final handleColor = theme?.handleColor ?? fitTheme?.fitMenuThemeData.handleColor ?? globalTheme.colorScheme.onPrimary;
     final backgroundColor = theme?.backgroundColor ?? fitTheme?.fitMenuThemeData.backgroundColor ?? globalTheme.colorScheme.secondary;
     final dividerThickness = theme?.dividerThickness ?? fitTheme?.fitMenuThemeData.dividerThickness ?? 0.25;
+    final disabledOpacity = theme?.disabledOpacity ?? fitTheme?.fitMenuThemeData.disabledOpacity ?? 0.5;
 
     return Container(
       height: height,
@@ -124,25 +125,37 @@ class FitMenu extends StatelessWidget {
               ),
               for (final item in menuItems)
                 if (item.show(context, tappedItem))
-                  ListTile(
-                    onTap: () {
-                      if (onItemTap != null) {
-                        onItemTap!();
-                      }
+                  Builder(
+                    builder: (context) {
+                      final disabled = item.disable(context, tappedItem);
 
-                      if (popOnTap) {
-                        Navigator.of(context).pop();
-                      }
+                      return AbsorbPointer(
+                        absorbing: disabled,
+                        child: Opacity(
+                          opacity: disabled ? disabledOpacity : 1,
+                          child: ListTile(
+                            onTap: () {
+                              if (onItemTap != null) {
+                                onItemTap!();
+                              }
 
-                      item.onTap(context, tappedItem);
-                    },
-                    leading: Icon(item.icon,
-                        color: iconColor),
-                    title: FitText.title(
-                      item.title,
-                      style: TextStyle(
-                          color: textColor),
-                    ),
+                              if (popOnTap) {
+                                Navigator.of(context).pop();
+                              }
+
+                              item.onTap(context, tappedItem);
+                            },
+                            leading: Icon(item.icon,
+                                color: iconColor),
+                            title: FitText.title(
+                              item.title,
+                              style: TextStyle(
+                                  color: textColor),
+                            ),
+                          ),
+                        ),
+                      );
+                    }
                   ),
             ],
           ),
