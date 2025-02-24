@@ -8,11 +8,14 @@ class FitMenuThemeData {
 
   final double? dividerThickness;
 
+  final double? disabledOpacity;
+
   const FitMenuThemeData({
     this.textColor,
     this.iconColor,
     this.handleColor,
     this.backgroundColor,
     this.dividerThickness,
+    this.disabledOpacity,
   });
 }

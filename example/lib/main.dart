@@ -267,6 +267,7 @@ class MyApp extends StatelessWidget {
                                     FitMenuItem(
                                         icon: Icons.home,
                                         title: "Item 2",
+                                        disable: (_, __) => true,
                                         onTap: (context, item) {
                                           context.showSnackbar(
                                               "Hello from item 2 !");
