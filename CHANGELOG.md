@@ -108,3 +108,7 @@
 ## 1.7.2
 
 - Added disabled property to FitMenuItem.
+
+## 1.7.3
+
+- Fixed a bug where FitMenuItems where disabled by default.

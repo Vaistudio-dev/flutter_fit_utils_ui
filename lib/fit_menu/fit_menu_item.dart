@@ -31,10 +31,11 @@ class FitMenuItem {
     required this.title,
     required this.onTap,
     this.show = _accept,
-    this.disable = _accept,
+    this.disable = _refuse,
   });
 
   static bool _accept(_, __) => true;
+  static bool _refuse(_, __) => false;
 
   /// Copies an instance and override properties.
   FitMenuItem copyWith(
