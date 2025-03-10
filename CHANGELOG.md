@@ -112,3 +112,7 @@
 ## 1.7.3
 
 - Fixed a bug where FitMenuItems where disabled by default.
+
+## 1.7.4
+
+- Removed BoxShadow on FitImageCards.

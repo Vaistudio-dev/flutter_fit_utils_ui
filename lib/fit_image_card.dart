@@ -48,13 +48,6 @@ class FitImageCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.black,
         borderRadius: fitTheme?.baseRadius,
-        boxShadow: [
-          BoxShadow(
-            color: Theme.of(context).colorScheme.secondary,
-            spreadRadius: 2,
-            blurRadius: 10,
-          ),
-        ],
       ),
       clipBehavior: Clip.hardEdge,
       child: Stack(
@@ -78,7 +71,7 @@ class FitImageCard extends StatelessWidget {
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
                 colors: [
-                  Colors.black.withOpacity(0.1),
+                  Colors.black.withValues(alpha: 0.1),
                   Colors.black,
                 ],
               ),
