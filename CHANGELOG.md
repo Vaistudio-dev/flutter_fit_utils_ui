@@ -116,3 +116,6 @@
 ## 1.7.4
 
 - Removed BoxShadow on FitImageCards.
+
+## 1.7.5
+.
