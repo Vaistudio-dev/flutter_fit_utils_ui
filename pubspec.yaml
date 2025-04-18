@@ -1,9 +1,9 @@
 name: flutter_fit_utils_ui
 description: "A flutter package that offers pre-built UI components to build your UI faster. This package is part of the flutter_fit_utils environement."
-version: 1.7.4
+version: 1.7.5
 homepage: https://pub.dev/packages/flutter_fit_utils_ui
-repository: https://github.com/s0punk/flutter_fit_utils_ui
-issue_tracker: https://github.com/s0punk/flutter_fit_utils_ui/issues
+repository: https://github.com/Vaistudio-dev/flutter_fit_utils_ui
+issue_tracker: https://github.com/Vaistudio-dev/flutter_fit_utils_ui/issues
 
 platforms:
   android:
