@@ -8,6 +8,10 @@ class FitLoadingHandler extends StatefulWidget {
   /// The pointers will also be absorbed when loading.
   final bool loading;
 
+  /// Widget to display to indicate to the user that [child] is loading.
+  /// If [null], the displayed widget will be a [FitLoadingIndicator].
+  final Widget? loadingIndicator;
+
   /// Child widget.
   final Widget child;
 
@@ -19,6 +23,7 @@ class FitLoadingHandler extends StatefulWidget {
     super.key,
     required this.loading,
     required this.child,
+    this.loadingIndicator,
     this.behavior,
   });
 
@@ -38,7 +43,7 @@ class _FitLoadingHandlerState extends State<FitLoadingHandler> {
       children: [
         Visibility(
           visible: widget.loading,
-          child: const FitLoadingIndicator(),
+          child: widget.loadingIndicator ?? const FitLoadingIndicator(),
         ),
         AnimatedOpacity(
           opacity: widget.loading ? finalBehavior.loadingOpacity : 1,
