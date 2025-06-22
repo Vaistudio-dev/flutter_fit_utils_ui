@@ -39,7 +39,7 @@ Available widgets:
 - Go inside your pubspec.yaml file
 - Add this line under the dependencies:
 ```
-flutter_fit_utils_ui: ^1.7.7
+flutter_fit_utils_ui: ^1.7.9
 ```
 - Get dependencies
 ```

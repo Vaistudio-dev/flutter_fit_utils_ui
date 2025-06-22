@@ -104,3 +104,6 @@
 ## 1.7.8
 - FitTextInputs now automatically unfocused themselves when the user's taps outside of them.
 - Fixed multiple warnings due to deprecations.
+
+## 1.7.9
+- Added a new constructor to FitButton.

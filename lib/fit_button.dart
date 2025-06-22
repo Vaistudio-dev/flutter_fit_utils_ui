@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'fit_text.dart';
 import 'fit_theme.dart';
 
 /// Wrapper for buttons.
@@ -40,6 +41,18 @@ class FitButton extends StatelessWidget {
     this.height,
     this.color,
   });
+
+  /// Creates a new [FitButton] with the child set as a [FitText.button].
+  FitButton.text(String text, {
+    super.key,
+    this.onTap,
+    this.onLongPress,
+    this.margin,
+    this.padding,
+    this.width,
+    this.height,
+    this.color,
+  }) : child = FitText.button(text);
 
   @override
   Widget build(BuildContext context) {
