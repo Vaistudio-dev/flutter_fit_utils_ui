@@ -227,13 +227,16 @@ class FitTextInput extends StatelessWidget {
       autovalidateMode: validationMode,
       autofocus: autofocus,
       obscureText: hideValue,
+      onTapOutside: (_) {
+        FocusScope.of(context).unfocus();
+      },
       inputFormatters: [
         if (formatters != null) ...formatters!,
         LengthLimitingTextInputFormatter(maxLength),
       ],
       validator: validation,
       style: TextStyle(
-        color: Theme.of(context).colorScheme.onBackground,
+        color: Theme.of(context).colorScheme.onSurface,
         decoration: TextDecoration.none,
       ).merge(Theme.of(context).textTheme.bodyMedium),
       decoration: InputDecoration(

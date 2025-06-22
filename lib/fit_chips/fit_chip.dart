@@ -34,7 +34,7 @@ class FitChip extends StatelessWidget {
         }
       },
       style: ButtonStyle(
-        side: MaterialStateProperty.all<BorderSide>(
+        side: WidgetStateProperty.all<BorderSide>(
           BorderSide(
             color: (selected
                 ? (appTheme.chipTheme.selectedColor ??
@@ -43,17 +43,17 @@ class FitChip extends StatelessWidget {
                     appTheme.colorScheme.secondary)),
           ),
         ),
-        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+        shape: WidgetStateProperty.all<RoundedRectangleBorder>(
             RoundedRectangleBorder(
           borderRadius: FitTheme.of(context)?.baseRadius ??
               const BorderRadius.all(
                   Radius.circular(FitTheme.defaultBaseRadius)),
         )),
         backgroundColor: selected
-            ? MaterialStateProperty.all<Color>(
+            ? WidgetStateProperty.all<Color>(
                 appTheme.chipTheme.selectedColor ??
                     appTheme.colorScheme.primary)
-            : MaterialStateProperty.all<Color>(
+            : WidgetStateProperty.all<Color>(
                 appTheme.chipTheme.secondarySelectedColor ??
                     appTheme.colorScheme.secondary),
       ),

@@ -67,7 +67,7 @@ class FitSelectableCard extends StatelessWidget {
                     ),
                     child: selected
                         ? Icon(Icons.check,
-                            size: 16, color: appTheme.colorScheme.background)
+                            size: 16, color: appTheme.colorScheme.surface)
                         : null,
                   ),
                   FitText.body(

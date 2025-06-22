@@ -96,7 +96,11 @@
 .
 
 ## 1.7.6
-- Updated depencies.
+- Updated dependencies.
 
 ## 1.7.7
 - Added the possibility to display a custom widget inside FitLoadingIndicator.
+
+## 1.7.8
+- FitTextInputs now automatically unfocused themselves when the user's taps outside of them.
+- Fixed multiple warnings due to deprecations.

@@ -46,12 +46,12 @@ class FitButton extends StatelessWidget {
     final FitTheme? fitTheme = FitTheme.of(context);
 
     ButtonStyle style = ButtonStyle(
-      shape: fitTheme != null ? MaterialStateProperty.all<RoundedRectangleBorder>(
+      shape: fitTheme != null ? WidgetStateProperty.all<RoundedRectangleBorder>(
         RoundedRectangleBorder(
           borderRadius: fitTheme.baseRadius,
         ),
       ) : null,
-      backgroundColor: color != null ? MaterialStateProperty.all<Color>(color!) : null,
+      backgroundColor: color != null ? WidgetStateProperty.all<Color>(color!) : null,
     );
 
     return Container(
