@@ -107,3 +107,6 @@
 
 ## 1.7.9
 - Added a new constructor to FitButton.
+
+## 1.7.10
+- Added possibility to set a FitButton's width automatically through ButtonThemeData.minWidth.

@@ -68,7 +68,7 @@ class FitButton extends StatelessWidget {
     );
 
     return Container(
-      width: width,
+      width: width ?? Theme.of(context).buttonTheme.minWidth,
       height: height ?? Theme.of(context).buttonTheme.height,
       margin: margin,
       padding: padding,
