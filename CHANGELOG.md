@@ -110,3 +110,6 @@
 
 ## 1.7.10
 - Added possibility to set a FitButton's width automatically through ButtonThemeData.minWidth.
+
+## 1.7.11
+- Fixed a bug where FitTextInput would crash on web.

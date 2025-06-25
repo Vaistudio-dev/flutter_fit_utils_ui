@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -210,14 +211,17 @@ class FitTextInput extends StatelessWidget {
       inputLabel.write(" *");
     }
 
+    var keyboard = keyboardType;
+    if (!kIsWeb && Platform.isIOS && keyboardType == TextInputType.number) {
+      keyboard = TextInputType.text;
+    }
+
     final Widget fieldWidget = TextFormField(
       readOnly: readonly ?? false,
       expands: expand,
       maxLines: maxLines,
       minLines: minLines,
-      keyboardType: Platform.isIOS && keyboardType == TextInputType.number
-          ? TextInputType.text
-          : keyboardType,
+      keyboardType: keyboard,
       textCapitalization: capitalization,
       controller: controller,
       textInputAction: inputAction,
