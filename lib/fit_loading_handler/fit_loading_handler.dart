@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_fit_utils_ui/flutter_fit_utils_ui.dart';
 
+enum LoadingRenderPosition {
+  top,
+  bottom,
+}
+
 /// Widget that can change the loading state of it's child.
 class FitLoadingHandler extends StatefulWidget {
   /// Set to [true] if the child is loading and a loading indicator should be displayed.
@@ -10,7 +15,9 @@ class FitLoadingHandler extends StatefulWidget {
 
   /// Widget to display to indicate to the user that [child] is loading.
   /// If [null], the displayed widget will be a [FitLoadingIndicator].
-  final Widget? loadingIndicator;
+  final Widget loadingIndicator;
+
+  final LoadingRenderPosition renderPosition;
 
   /// Child widget.
   final Widget child;
@@ -23,7 +30,8 @@ class FitLoadingHandler extends StatefulWidget {
     super.key,
     required this.loading,
     required this.child,
-    this.loadingIndicator,
+    this.loadingIndicator = const FitLoadingIndicator(),
+    this.renderPosition = LoadingRenderPosition.bottom,
     this.behavior,
   });
 
@@ -32,19 +40,24 @@ class FitLoadingHandler extends StatefulWidget {
 }
 
 class _FitLoadingHandlerState extends State<FitLoadingHandler> {
+  Widget getLoadingWidget(Duration transitionDuration) => AnimatedOpacity(
+    opacity: widget.loading ? 1 : 0,
+    duration: transitionDuration,
+    child: widget.loadingIndicator,
+  );
+
   @override
   Widget build(BuildContext context) {
-    final FitTheme? fitTheme = FitTheme.of(context);
+    final FitTheme? fitTheme = FitTheme.maybeOf(context);
     final FitLoadingHandlerBehavior finalBehavior = widget.behavior ??
         fitTheme?.loadingBehavior ??
         const FitLoadingHandlerBehavior();
 
     return Stack(
+      alignment: Alignment.center,
       children: [
-        Visibility(
-          visible: widget.loading,
-          child: widget.loadingIndicator ?? const FitLoadingIndicator(),
-        ),
+        if (widget.loading && widget.renderPosition == LoadingRenderPosition.bottom)
+          widget.loadingIndicator,
         AnimatedOpacity(
           opacity: widget.loading ? finalBehavior.loadingOpacity : 1,
           duration: finalBehavior.transitionDuration,
@@ -53,6 +66,8 @@ class _FitLoadingHandlerState extends State<FitLoadingHandler> {
             child: widget.child,
           ),
         ),
+        if (widget.loading && widget.renderPosition == LoadingRenderPosition.top)
+          widget.loadingIndicator,
       ],
     );
   }

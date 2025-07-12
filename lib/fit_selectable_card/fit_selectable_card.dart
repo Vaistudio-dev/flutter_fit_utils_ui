@@ -30,7 +30,7 @@ class FitSelectableCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final FitTheme fitTheme =
-        FitTheme.of(context) ?? const FitTheme(child: SizedBox());
+        FitTheme.maybeOf(context) ?? const FitTheme(child: SizedBox());
     final ThemeData appTheme = Theme.of(context);
 
     return GestureDetector(

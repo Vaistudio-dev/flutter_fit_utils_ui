@@ -51,7 +51,7 @@ class FitPage extends StatelessWidget {
       body: SafeArea(
         child: Container(
           alignment: alignment,
-          margin: FitTheme.of(context)?.pageMargin,
+          margin: FitTheme.maybeOf(context)?.pageMargin,
           child: SingleChildScrollView(
             physics: scrollPhysics,
             child: Column(

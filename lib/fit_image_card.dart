@@ -39,7 +39,7 @@ class FitImageCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final FitTheme? fitTheme = FitTheme.of(context);
+    final FitTheme? fitTheme = FitTheme.maybeOf(context);
 
     return Container(
       width: double.infinity,

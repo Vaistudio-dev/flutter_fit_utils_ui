@@ -49,7 +49,7 @@ class _FitDialogState extends State<FitDialog> {
       height: widget.height ?? MediaQuery.of(context).size.height * 0.5,
       width: double.infinity,
       decoration: BoxDecoration(
-        borderRadius: FitTheme.of(context)?.baseRadius,
+        borderRadius: FitTheme.maybeOf(context)?.baseRadius,
       ),
       child: Container(
         padding:

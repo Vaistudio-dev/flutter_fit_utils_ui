@@ -149,7 +149,7 @@ class FitText extends StatelessWidget {
 
   TextStyle? _getStyle(BuildContext context) {
     final ThemeData appTheme = Theme.of(context);
-    final FitTheme? fitTheme = FitTheme.of(context);
+    final FitTheme? fitTheme = FitTheme.maybeOf(context);
 
     TextStyle applyStylingOrder(mainStyle) =>
         mainStyle?.merge(fitTheme?.baseTextStyle?.merge(style) ?? style) ??

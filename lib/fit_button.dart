@@ -56,7 +56,7 @@ class FitButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final FitTheme? fitTheme = FitTheme.of(context);
+    final FitTheme? fitTheme = FitTheme.maybeOf(context);
 
     ButtonStyle style = ButtonStyle(
       shape: fitTheme != null ? WidgetStateProperty.all<RoundedRectangleBorder>(

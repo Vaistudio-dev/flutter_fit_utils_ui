@@ -51,7 +51,12 @@ class FitTheme extends InheritedWidget {
   });
 
   /// Gets the closest [FitTheme] in the Widget Tree.
-  static FitTheme? of(BuildContext context) {
+  static FitTheme of(BuildContext context) {
+    return context.dependOnInheritedWidgetOfExactType<FitTheme>()!;
+  }
+
+  // Gets the closest [FitTheme] in the Widget Tree.
+  static FitTheme? maybeOf(BuildContext context) {
     return context.dependOnInheritedWidgetOfExactType<FitTheme>();
   }
 

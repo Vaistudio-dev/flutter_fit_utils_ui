@@ -113,3 +113,8 @@
 
 ## 1.7.11
 - Fixed a bug where FitTextInput would crash on web.
+
+## 1.8.0
+- Added FitTheme.maybeOf
+- Added StatusLoadingIndicator to be used inside FitLoadingHandler
+- Added render options to FitLoadingHandler

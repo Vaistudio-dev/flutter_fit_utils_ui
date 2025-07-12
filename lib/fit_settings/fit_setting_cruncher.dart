@@ -50,7 +50,7 @@ class FitSettingsCruncher extends StatelessWidget {
               ),
               body: SafeArea(
                 child: Container(
-                  margin: FitTheme.of(context)?.pageMargin,
+                  margin: FitTheme.maybeOf(context)?.pageMargin,
                   child: SingleChildScrollView(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,

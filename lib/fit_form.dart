@@ -54,7 +54,7 @@ class _FitFormState extends State<FitForm> {
       body: SafeArea(
         child: Form(
           child: Container(
-            margin: FitTheme.of(context)?.pageMargin,
+            margin: FitTheme.maybeOf(context)?.pageMargin,
             child: Builder(
               builder: (context) {
                 return Column(

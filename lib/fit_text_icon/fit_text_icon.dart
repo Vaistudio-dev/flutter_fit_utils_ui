@@ -21,7 +21,7 @@ class FitTextIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final FitTheme? fitTheme = FitTheme.of(context);
+    final FitTheme? fitTheme = FitTheme.maybeOf(context);
     final FitTextIconThemeData data = themeData ??
         fitTheme?.fitTextIconThemeData ??
         const FitTextIconThemeData();

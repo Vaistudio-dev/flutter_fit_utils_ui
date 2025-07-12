@@ -524,12 +524,22 @@ class _LoadingHandlerExampleState extends State<LoadingHandlerExample> {
   @override
   Widget build(BuildContext context) {
     return FitLoadingHandler(
-        loading: loading,
-        child: FloatingActionButton.small(
-          onPressed: () => setState(() {
-            loading = true;
-          }),
-          child: const Icon(Icons.start),
-        ));
+      loading: loading,
+      loadingIndicator: const StatusLoadingIndicator(
+        status: "Sending data to that thing that we talked about some time ago you know...",
+      ),
+      renderPosition: LoadingRenderPosition.top,
+      child: SizedBox(
+        height: 500,
+        child: Center(
+          child: FloatingActionButton(
+            onPressed: () => setState(() {
+              loading = true;
+            }),
+            child: const Icon(Icons.start),
+          ),
+        ),
+      ),
+    );
   }
 }

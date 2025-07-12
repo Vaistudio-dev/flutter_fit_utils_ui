@@ -45,7 +45,7 @@ class FitChip extends StatelessWidget {
         ),
         shape: WidgetStateProperty.all<RoundedRectangleBorder>(
             RoundedRectangleBorder(
-          borderRadius: FitTheme.of(context)?.baseRadius ??
+          borderRadius: FitTheme.maybeOf(context)?.baseRadius ??
               const BorderRadius.all(
                   Radius.circular(FitTheme.defaultBaseRadius)),
         )),

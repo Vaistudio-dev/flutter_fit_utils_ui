@@ -66,7 +66,7 @@ class FitMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final fitTheme = FitTheme.of(context);
+    final fitTheme = FitTheme.maybeOf(context);
     final globalTheme = Theme.of(context);
 
     final textColor = theme?.textColor ?? fitTheme?.fitMenuThemeData.textColor ?? globalTheme.colorScheme.onSecondary;
@@ -80,7 +80,7 @@ class FitMenu extends StatelessWidget {
       height: height,
       decoration: BoxDecoration(
         color: backgroundColor,
-        borderRadius: FitTheme.of(context)?.baseRadius.copyWith(
+        borderRadius: fitTheme?.baseRadius.copyWith(
             bottomRight: const Radius.circular(0),
             bottomLeft: const Radius.circular(0)),
       ),
