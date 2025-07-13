@@ -40,12 +40,6 @@ class FitLoadingHandler extends StatefulWidget {
 }
 
 class _FitLoadingHandlerState extends State<FitLoadingHandler> {
-  Widget getLoadingWidget(Duration transitionDuration) => AnimatedOpacity(
-    opacity: widget.loading ? 1 : 0,
-    duration: transitionDuration,
-    child: widget.loadingIndicator,
-  );
-
   @override
   Widget build(BuildContext context) {
     final FitTheme? fitTheme = FitTheme.maybeOf(context);

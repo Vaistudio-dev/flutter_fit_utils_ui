@@ -118,3 +118,6 @@
 - Added FitTheme.maybeOf
 - Added StatusLoadingIndicator to be used inside FitLoadingHandler
 - Added render options to FitLoadingHandler
+
+## 1.9.0
+- Fixed StatusLoadingIndicator's height.

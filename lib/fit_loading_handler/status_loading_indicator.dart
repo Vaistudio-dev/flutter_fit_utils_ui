@@ -16,9 +16,9 @@ class StatusLoadingIndicator extends StatelessWidget {
     this.constraints = const BoxConstraints(
       minWidth: 200,
       minHeight: 120,
+      maxHeight: 120,
       maxWidth: 300,
     ),
-
   });
 
   @override

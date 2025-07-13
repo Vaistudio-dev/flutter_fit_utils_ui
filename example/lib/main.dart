@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
               useMaterial3: true,
               inputDecorationTheme: InputDecorationTheme(
                 border: OutlineInputBorder(
-                  borderRadius: FitTheme.of(context)!.innerRadius,
+                  borderRadius: FitTheme.of(context).innerRadius,
                 ),
               )),
           home: Scaffold(
@@ -526,7 +526,7 @@ class _LoadingHandlerExampleState extends State<LoadingHandlerExample> {
     return FitLoadingHandler(
       loading: loading,
       loadingIndicator: const StatusLoadingIndicator(
-        status: "Sending data to that thing that we talked about some time ago you know...",
+        status: "Sending data ...",
       ),
       renderPosition: LoadingRenderPosition.top,
       child: SizedBox(
