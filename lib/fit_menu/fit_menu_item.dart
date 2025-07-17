@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_fit_utils/flutter_fit_utils.dart';
 
 /// Item for a [FitMenu].
 @immutable
@@ -14,15 +13,15 @@ class FitMenuItem {
   final String title;
 
   /// Execute when tapping on the item.
-  final Function(BuildContext context, Modelable? item) onTap;
+  final Function(BuildContext context, Object? item) onTap;
 
   /// Execute when checking if the item should be displayed or not.
   /// Should return [true] if the item has to be shown.
-  final bool Function(BuildContext context, Modelable? item) show;
+  final bool Function(BuildContext context, Object? item) show;
 
   /// Execute when checking if the item should be disabled or not.
   /// Should return [true] if the item has to be disabled;
-  final bool Function(BuildContext context, Modelable? item) disable;
+  final bool Function(BuildContext context, Object? item) disable;
 
   /// Creates a new [FitMenuItem].
   const FitMenuItem({
@@ -42,9 +41,9 @@ class FitMenuItem {
           {String? id,
           IconData? icon,
           String? title,
-          Function(BuildContext context, Modelable? item)? onTap,
-          bool Function(BuildContext context, Modelable? item)? show,
-          bool Function(BuildContext context, Modelable? item)? disable}) =>
+          Function(BuildContext context, Object? item)? onTap,
+          bool Function(BuildContext context, Object? item)? show,
+          bool Function(BuildContext context, Object? item)? disable}) =>
       FitMenuItem(
         id: id ?? this.id,
         icon: icon ?? this.icon,

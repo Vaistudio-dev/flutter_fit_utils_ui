@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_fit_utils/flutter_fit_utils.dart';
 
 import '../flutter_fit_utils_ui.dart';
 
@@ -16,7 +15,7 @@ class FitMenu extends StatelessWidget {
   static const double _defaultMenuHeight = 470;
 
   /// Item that activated the menu.
-  final Modelable? tappedItem;
+  final Object? tappedItem;
 
   /// Widget to be placed at the icon's position.
   final Widget? iconWidget;
