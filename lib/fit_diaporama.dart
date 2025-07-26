@@ -19,6 +19,9 @@ class FitDiaporama extends StatefulWidget {
   /// If [true], the diaporama will stop once every image has been shown.
   final bool runOnce;
 
+  /// How the image should be inscribed into the box.
+  final BoxFit boxFit;
+
   /// Creates a new [FitDiaporama].
   const FitDiaporama({
     super.key,
@@ -26,6 +29,7 @@ class FitDiaporama extends StatefulWidget {
     this.animationDuration = _defaultAnimationTransition,
     this.imageDuration = _defaultImageDuration,
     this.runOnce = false,
+    this.boxFit = BoxFit.fitHeight,
   });
 
   @override
@@ -74,7 +78,7 @@ class _FitDiaporamaState extends State<FitDiaporama> {
         decoration: BoxDecoration(
           image: DecorationImage(
             image: widget.images[imageIndex],
-            fit: BoxFit.fitHeight,
+            fit: widget.boxFit,
           ),
         ),
       ),

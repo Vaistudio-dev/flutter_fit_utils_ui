@@ -124,3 +124,6 @@
 
 ## 1.10.0
 - Removed dependency to flutter_fit_utils.
+
+## 1.10.1
+- Added the boxFit parameter to FitDiaporama.
